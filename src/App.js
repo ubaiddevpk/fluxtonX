@@ -5,6 +5,7 @@ import AboutUs from './Pages/AboutUs';
 import Services from './Pages/Services';
 import Portfolio from './Pages/Portfolio';
 import ContactUs from './Pages/ContactUs';
+import Footer from "./Components/Footer";
 
 function App() {
   return (
@@ -15,13 +16,14 @@ function App() {
 
           <Routes>
 
-            <Route exact path="/" component={Home} />
-            <Route exact path="/about" component={AboutUs} />
-            <Route exact path="/services" component={Services} />
-            <Route exact path="/portfolio" component={Portfolio} />
-            <Route exact path="/contact" component={ContactUs} />
+            <Route exact path="/" element={<Home />} />
+            <Route exact path="/about" element={<AboutUs />} />
+            <Route exact path="/services" element={<Services />} />
+            <Route exact path="/portfolio" element={<Portfolio />} />
+            <Route exact path="/contact" element={<ContactUs />} />
 
           </Routes>
+          <Footer/>
         </div>
       </Router>
     </>
