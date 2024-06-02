@@ -2,12 +2,12 @@ import React from 'react';
 
 const ServiceCard = () => {
     const cards = [
-        { id: 1, logo: '📷', title: 'Card 1', description: 'This is the first card description. and i want to add more and more' },
-        { id: 2, logo: '📷', title: 'Card 2', description: 'This is the second card description. and i want to add more and more' },
-        { id: 3, logo: '📷', title: 'Card 3', description: 'This is the third card description. and i want to add more and more' },
-        { id: 4, logo: '📷', title: 'Card 4', description: 'This is the fourth card description. and i want to add more and more' },
-        { id: 5, logo: '📷', title: 'Card 5', description: 'This is the fifth card description. and i want to add more and more' },
-        { id: 6, logo: '📷', title: 'Card 6', description: 'This is the sixth card description. and i want to add more and more' },
+        { id: 1, logo: '📷', title: 'Mobile Apps Development', description: 'This is the first card description. and i want to add more and more' },
+        { id: 2, logo: '📷', title: 'Websites Development', description: 'This is the second card description. and i want to add more and more' },
+        { id: 3, logo: '📷', title: 'UI/UX Desiging', description: 'This is the third card description. and i want to add more and more' },
+        { id: 4, logo: '📷', title: 'Ecommerce Services', description: 'This is the fourth card description. and i want to add more and more' },
+        { id: 5, logo: '📷', title: 'Digital Marketing', description: 'This is the fifth card description. and i want to add more and more' },
+        { id: 6, logo: '📷', title: 'Business Development', description: 'This is the sixth card description. and i want to add more and more' },
     ];
 
     return (
