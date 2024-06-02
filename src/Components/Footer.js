@@ -1,10 +1,11 @@
 import React from 'react';
-import backgroundImage from '../Assets/Images/footer-bg-1.jpg';
+// import backgroundImage from '../Assets/Images/footer-bg-1.jpg';
 
 const Footer = () => {
     return (
-        <footer className="relative bg-cover bg-center" style={{ backgroundImage: `url(${backgroundImage})` }}>
-            <div className="absolute inset-0 bg-black opacity-65"></div> {/* Overlay with opacity */}
+        // <footer className="relative mt-20 bg-cover bg-center" style={{ backgroundImage: `url(${backgroundImage})` }}>
+        <footer className="relative mt-20 bg-sky-500">
+            <div className="absolute"></div> 
             <div className="relative mx-auto max-w-screen-xl space-y-8 px-8 py-16 sm:px-12 lg:space-y-16 lg:px-16">
                 <div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
                     <div>
@@ -15,11 +16,11 @@ const Footer = () => {
                         <p className="mt-4 max-w-xs text-white">
                             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Esse non cupiditate quae nam molestias.
                         </p>
-                        <div className="mt-4">
+                        <div className="mt-6">
                             <h4 className="text-white mb-2">Subscribe to Our Newsletter</h4>
                             <form className="flex">
-                                <input type="email" placeholder="Enter your email" className="px-4 py-2 rounded-l-md focus:outline-none focus:ring-2 focus:ring-blue-500" />
-                                <button type="submit" className="bg-blue-500 text-white px-4 py-2 rounded-r-md">Subscribe</button>
+                                <input type="email" placeholder="Enter your email" className="text-base font-medium text-white px-4 py-3 rounded-l-md focus:outline-none focus:ring-2 focus:ring-blue-500" />
+                                <button type="submit" className="bg-sky-600 text-white px-4 py-2 rounded-r-md hover:bg-white hover:text-sky-500 hover:border-sky-700 hover:border-2 hover:transition hover:duration-500">Subscribe</button>
                             </form>
                         </div>
                     </div>

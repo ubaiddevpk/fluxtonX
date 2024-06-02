@@ -4,7 +4,7 @@ import ServiceCopm from '../Components/ServiceCopm';
 import AboutUSComp from '../Components/AboutUSComp';
 import Counter from '../Components/Counter';
 import PortfolioComp from '../Components/PortfolioComp';
-import TestimonialComp from '../Components/TestimonialComp';
+// import TestimonialComp from '../Components/TestimonialComp';
 
 const Home = () => {
   return (
@@ -14,7 +14,7 @@ const Home = () => {
       <AboutUSComp/>
       <Counter/>
       <PortfolioComp/>
-      <TestimonialComp/>
+      {/* <TestimonialComp/> */}
     </>
   );
 }

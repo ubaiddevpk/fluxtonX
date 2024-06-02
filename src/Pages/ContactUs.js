@@ -1,6 +1,6 @@
 import React from 'react';
 import backgroundImage from "../Assets/Images/inner-page-hero.jpg"
-import ContactUsOurOffic from '../Components/ContactUsOurOffic';
+// import ContactUsOurOffic from '../Components/ContactUsOurOffic';
 import Form from '../Components/Form';
 const ContactUs = () => {
   return (
@@ -18,10 +18,10 @@ const ContactUs = () => {
           <p className="text-xl mb-20">Home / Contact Us</p>
         </div>
       </div>
-      <div className='mt-12' >
+      {/* <div className='mt-12' >
         <ContactUsOurOffic />
-      </div>
-      <div className=' mb-16' >
+      </div> */}
+      <div className=' mb-2' >
         <Form/>
       </div>
     </>
