@@ -1,14 +1,22 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import mobiledev from "../Assets/Icons/app-development.png";
+import webdev from "../Assets/Icons/web-development.png";
+import eccomdev from "../Assets/Icons/eccomerce.png";
+import digidev from "../Assets/Icons/social-media-marketing.png";
+import uiuxdev from "../Assets/Icons/ui-ux.png";
+import busidev from "../Assets/Icons/profit.png";
+
+
 
 const ServiceCard = () => {
     const cards = [
-        { id: 1, logo: '📷', title: 'Mobile Apps Development', description: 'Access an extensive range of forward-thinking mobile app development solutions to reach target audiences.' },
-        { id: 2, logo: '📷', title: 'Websites Development', description: 'Get cost-effective and eye-catching web development solutions for your business to thrive. ' },
-        { id: 3, logo: '📷', title: 'UI/UX Desiging', description: 'Unlock the power of intuitive design with our innovative UI/UX solutions. Transform your user experience and keep your audience engaged like never before.' },
-        { id: 4, logo: '📷', title: 'Ecommerce Development', description: 'Delivering perfect and top-notch customer satisfaction through smoothly functioning, secure, and integrated e-commerce solutions that help businesses boost sales, expand user engagement,' },
-        { id: 5, logo: '📷', title: 'Digital Marketing', description: 'Maneuver your brand with our Marketing & SEO strategies, tactics and technical expertise to grab the attention of larger audiences and convert more of them to revenue generating customers.' },
-        { id: 6, logo: '📷', title: 'Business Development', description: 'Use our business development skills to grow your business and reach more customers. We offer smart strategies and creative solutions to help you stay ahead and succeed.' },
+        { id: 1, logo: mobiledev, title: 'Mobile Apps Development', description: 'Access an extensive range of forward-thinking mobile app development solutions to reach target audiences.' },
+        { id: 2, logo: webdev, title: 'Websites Development', description: 'Get cost-effective and eye-catching web development solutions for your business to thrive. ' },
+        { id: 3, logo: uiuxdev, title: 'UI/UX Desiging', description: 'Unlock the power of intuitive design with our innovative UI/UX solutions. Transform your user experience and keep your audience engaged like never before.' },
+        { id: 4, logo: eccomdev, title: 'Ecommerce Development', description: 'Delivering perfect and top-notch customer satisfaction through smoothly functioning, secure, and integrated e-commerce solutions that help businesses boost sales, expand user engagement,' },
+        { id: 5, logo: busidev, title: 'Digital Marketing', description: 'Maneuver your brand with our Marketing & SEO strategies, tactics and technical expertise to grab the attention of larger audiences and convert more of them to revenue generating customers.' },
+        { id: 6, logo: digidev, title: 'Business Development', description: 'Use our business development skills to grow your business and reach more customers. We offer smart strategies and creative solutions to help you stay ahead and succeed.' },
     ];
 
     return (
@@ -17,7 +25,9 @@ const ServiceCard = () => {
                 <div
                     key={card.id}
                     className="group bg-transparent border border-sky-500 p-4 rounded-lg transition duration-500 hover:bg-gradient-to-r hover:from-sky-500 hover:to-sky-500">
-                    <div className="text-4xl mb-4 ">{card.logo}</div>
+                    <div className="mb-4 grid justify-items-start">
+                        <img src={card.logo} alt={card.title} className="h-16 w-16 mx-auto group-hover:filter group-hover:brightness-0 group-hover:invert"/>
+                    </div>
                     <h3 className="text-xl font-bold mb-2 group-hover:text-white">{card.title}</h3>
                     <p className="mb-4 group-hover:text-white">{card.description}</p>
                     <Link to="/readmore" className="text-sky-500 group-hover:text-white hover:underline">Read More</Link>
