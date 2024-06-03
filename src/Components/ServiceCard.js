@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const ServiceCard = () => {
     const cards = [
@@ -19,7 +20,7 @@ const ServiceCard = () => {
                     <div className="text-4xl mb-4 ">{card.logo}</div>
                     <h3 className="text-xl font-bold mb-2 group-hover:text-white">{card.title}</h3>
                     <p className="mb-4 group-hover:text-white">{card.description}</p>
-                    <a href="/#" className="text-sky-500 group-hover:text-white hover:underline">Read More</a>
+                    <Link to="/readmore" className="text-sky-500 group-hover:text-white hover:underline">Read More</Link>
                 </div>
             ))}
         </div>

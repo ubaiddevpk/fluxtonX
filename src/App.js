@@ -6,6 +6,7 @@ import Services from './Pages/Services';
 import Portfolio from './Pages/Portfolio';
 import ContactUs from './Pages/ContactUs';
 import Footer from "./Components/Footer";
+import ReadMore from "./Pages/ReadMore";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
             <Route exact path="/services" element={<Services />} />
             <Route exact path="/portfolio" element={<Portfolio />} />
             <Route exact path="/contact" element={<ContactUs />} />
+            <Route exact path="/readmore" element={<ReadMore/>}/>
 
           </Routes>
           <Footer/>
