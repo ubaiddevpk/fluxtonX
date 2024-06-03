@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { FaBars, FaTimes } from 'react-icons/fa';
+import logo from "../Assets/Images/logo.jpeg"
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -35,9 +36,9 @@ const Navbar = () => {
     <div className="relative">
       <nav className={`p-7 flex items-center justify-between px-6 md:px-16 ${scrolling ? 'bg-sky-500' : isSmallDevice ? 'bg-sky-500' : 'bg-transparent'} fixed top-0 left-0 right-0 z-10`}>
         {/* Logo */}
-        <div className="flex items-center">
-          <img src="/path/to/logo.png" alt="Logo" className="h-8 mr-4" />
-        </div>
+        <Link to="/" className="flex items-center">
+          <img src={logo} alt="Logo" className="h-12 w-16 mr-4" />
+        </Link>
 
         {/* Links for larger screens */}
         <div className="hidden md:flex space-x-9 font-semibold">

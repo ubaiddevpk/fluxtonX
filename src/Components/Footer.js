@@ -1,5 +1,7 @@
 import React from 'react';
 // import backgroundImage from '../Assets/Images/footer-bg-1.jpg';
+import lgo from "../Assets/Images/logo.jpeg"
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
     return (
@@ -9,10 +11,10 @@ const Footer = () => {
             <div className="relative mx-auto max-w-screen-xl space-y-8 px-8 py-16 sm:px-12 lg:space-y-16 lg:px-16">
                 <div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
                     <div>
-                        <div className="flex items-center">
+                        <Link to="/" className="flex items-center">
                             {/* Your logo */}
-                            <span className="ml-2 text-white">Your Company</span>
-                        </div>
+                            <img src={lgo} className="ml-2 h-12 w-16 text-white"/>
+                        </Link>
                         <p className="mt-4 max-w-xs text-white">
                             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Esse non cupiditate quae nam molestias.
                         </p>
