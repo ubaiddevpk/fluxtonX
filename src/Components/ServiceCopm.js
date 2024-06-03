@@ -9,7 +9,7 @@ const ServiceCopm = () => {
                     <h5 className="text-lg text-sky-500 font-bold mb-2">SERVICES</h5>
                     <h2 className="text-3xl md:text-4xl font-bold mb-4">Services We Offer</h2>
                     <p className="text-lg text-gray-700">
-                        Lorem ipsum dolor sit amet, consectetur hell <br /> adipiscing elit. Nulla ac convallis leo.
+                    FluxtonX offers a range of services to help our clients <br /> i.e. Businesses and Individuals Design, Develop and Maintain Mobile and Web applications. Below, you'll find an overview of the key services we provide.
                     </p>
                 </div>
                 <div className="md:w-1/3 mt-4 md:mt-0 flex justify-end">

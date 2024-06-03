@@ -2,12 +2,12 @@ import React from 'react';
 
 const ServiceCard = () => {
     const cards = [
-        { id: 1, logo: '📷', title: 'Mobile Apps Development', description: 'This is the first card description. and i want to add more and more' },
-        { id: 2, logo: '📷', title: 'Websites Development', description: 'This is the second card description. and i want to add more and more' },
-        { id: 3, logo: '📷', title: 'UI/UX Desiging', description: 'This is the third card description. and i want to add more and more' },
-        { id: 4, logo: '📷', title: 'Ecommerce Services', description: 'This is the fourth card description. and i want to add more and more' },
-        { id: 5, logo: '📷', title: 'Digital Marketing', description: 'This is the fifth card description. and i want to add more and more' },
-        { id: 6, logo: '📷', title: 'Business Development', description: 'This is the sixth card description. and i want to add more and more' },
+        { id: 1, logo: '📷', title: 'Mobile Apps Development', description: 'Access an extensive range of forward-thinking mobile app development solutions to reach target audiences.' },
+        { id: 2, logo: '📷', title: 'Websites Development', description: 'Get cost-effective and eye-catching web development solutions for your business to thrive. ' },
+        { id: 3, logo: '📷', title: 'UI/UX Desiging', description: 'Unlock the power of intuitive design with our innovative UI/UX solutions. Transform your user experience and keep your audience engaged like never before.' },
+        { id: 4, logo: '📷', title: 'Ecommerce Development', description: 'Delivering perfect and top-notch customer satisfaction through smoothly functioning, secure, and integrated e-commerce solutions that help businesses boost sales, expand user engagement,' },
+        { id: 5, logo: '📷', title: 'Digital Marketing', description: 'Maneuver your brand with our Marketing & SEO strategies, tactics and technical expertise to grab the attention of larger audiences and convert more of them to revenue generating customers.' },
+        { id: 6, logo: '📷', title: 'Business Development', description: 'Use our business development skills to grow your business and reach more customers. We offer smart strategies and creative solutions to help you stay ahead and succeed.' },
     ];
 
     return (
