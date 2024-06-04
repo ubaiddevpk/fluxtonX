@@ -25,12 +25,12 @@ const ServiceCard = () => {
                 <div
                     key={card.id}
                     className="group bg-transparent border border-sky-500 p-4 rounded-lg transition duration-500 hover:bg-gradient-to-r hover:from-sky-500 hover:to-sky-500">
-                    <div className="mb-4 grid justify-items-start">
-                        <img src={card.logo} alt={card.title} className="h-16 w-16 mx-auto group-hover:filter group-hover:brightness-0 group-hover:invert"/>
+                    <div className="mb-4 grid ">
+                        <img src={card.logo} alt={card.title} className="justify-items-start h-16 w-16  group-hover:filter group-hover:brightness-0 group-hover:invert"/>
                     </div>
                     <h3 className="text-xl font-bold mb-2 group-hover:text-white">{card.title}</h3>
                     <p className="mb-4 group-hover:text-white">{card.description}</p>
-                    <Link to="/readmore" className="text-sky-500 group-hover:text-white hover:underline">Read More</Link>
+                    <Link to={`/readmore/${card.id}`} className="text-sky-500 group-hover:text-white hover:underline">Read More</Link>
                 </div>
             ))}
         </div>

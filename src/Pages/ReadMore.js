@@ -1,8 +1,22 @@
 import React, { useState } from 'react';
+import { useParams } from 'react-router-dom';
 import emailjs from 'emailjs-com';
 import backgroundImage from "../Assets/Images/inner-page-hero.jpg";
 
+
+const services = [
+  { id: 1, title: 'Top Mobile App Development company: One-stop Destination For All Mobile App Development Services', description: 'Access an extensive range of forward-thinking mobile app development solutions to reach target audiences.' },
+  { id: 2, title: 'Websites Development', description: 'Get cost-effective and eye-catching web development solutions for your business to thrive.' },
+  { id: 3, title: 'UI/UX Designing', description: 'Unlock the power of intuitive design with our innovative UI/UX solutions. Transform your user experience and keep your audience engaged like never before.' },
+  { id: 4, title: 'Ecommerce Development', description: 'Delivering perfect and top-notch customer satisfaction through smoothly functioning, secure, and integrated e-commerce solutions that help businesses boost sales, expand user engagement.' },
+  { id: 5, title: 'Digital Marketing', description: 'Maneuver your brand with our Marketing & SEO strategies, tactics and technical expertise to grab the attention of larger audiences and convert more of them to revenue generating customers.' },
+  { id: 6, title: 'Business Development', description: 'Use our business development skills to grow your business and reach more customers. We offer smart strategies and creative solutions to help you stay ahead and succeed.' },
+];
+
 const ReadMore = () => {
+  const { id } = useParams();
+    const service = services.find(service => service.id === parseInt(id));
+    
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -41,14 +55,14 @@ const ReadMore = () => {
       >
         <div className=" inset-0 bg-black opacity-90 "></div>
         <div className="relative flex flex-col items-center justify-center h-full text-white">
-          <h1 className="text-5xl font-bold mt-24 mb-4">ReadMore</h1>
+          <h1 className="text-5xl font-bold mt-24 mb-4">{service.title}</h1>
           <p className="text-xl mb-20">Home / ReadMore</p>
         </div>
       </div>
       <div className="flex px-4 md:px-16 flex-col gap-16 md:flex-row md:justify-between p-6 mt-24 mb-16">
         <div className="md:w-2/3 mb-6 md:mb-0">
-          <h1 className="text-4xl font-bold mb-4 ">Top Mobile App Development company: One-stop Destination For All Mobile App Development Services</h1>
-          <p className="text-lg">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima quisquam architecto, consequatur nulla voluptatem sed neque modi cum, non laudantium mollitia amet esse dolore reprehenderit iusto nobis, excepturi atque suscipit maiores voluptates? Nam veniam sint quae minima quo ipsum cum, nobis sit a beatae, quod natus delectus. Exercitationem, atque est corporis praesentium quos nihil perspiciatis? Veritatis magni sunt ipsum praesentium officia quibusdam odio nihil. Sunt voluptates quia molestias consectetur, incidunt impedit quas consequatur, velit nesciunt nobis omnis dolores ipsum vel quam dignissimos, nihil autem quisquam in esse corrupti aliquid vero natus? Reiciendis beatae dolorem tempora iste optio enim aut illo.</p>
+          <h1 className="text-4xl font-bold mb-4 ">{service.title}</h1>
+          <p className="text-lg">{service.description}</p>
         </div>
         <div className="md:w-1/2 bg-white p-6 rounded-lg border-sky-500 border-2">
           <h2 className="text-2xl flex justify-center font-bold mb-4">FREE CONSULTATION</h2>
