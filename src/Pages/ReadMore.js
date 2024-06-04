@@ -62,7 +62,7 @@ const ReadMore = () => {
       <div className="flex px-4 md:px-16 flex-col gap-16 md:flex-row md:justify-between p-6 mt-24 mb-16">
         <div className="md:w-2/3 mb-6 md:mb-0">
           <h1 className="text-4xl font-bold mb-4 ">Top Mobile App Development company: One-stop Destination For All Mobile App Development Services</h1>
-          <p className="text-lg">FluxtonX is an award-winning top mobile app development company provide feature-packed and interactive mobile app development services for startups, medium and large enterprises. Be it a startup, SME or large enterprise, FluxtonX has been highly recommended by it's clients as a professional Mobile App Development Company proved to be the right development partner to bank on. Powered with professional technology consultants, FluxtonX commits to walk the path with you on your digital transformation journey. Starting from the technology consulting to the actual architecture & solution design, UI / UX to solution implementation, and even assistance on the Go To Market Strategy, Mobulous remains intact with all possible support for your enterprise. Our cutting-edge and out-of-the-box approach will deliver cost-effective mobile app development solutions to turn your business into a leading enterprise.</p>
+          <p className="text-lg">{service.description}</p>
         </div>
         <div className="md:w-1/2 bg-white p-6 rounded-lg border-sky-500 border-2">
           <h2 className="text-2xl flex justify-center font-bold mb-4">FREE CONSULTATION</h2>

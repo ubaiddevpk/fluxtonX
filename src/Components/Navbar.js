@@ -36,9 +36,11 @@ const Navbar = () => {
     <div className="relative">
       <nav className={`p-7 flex items-center justify-between px-6 md:px-16 ${scrolling ? 'bg-sky-500' : isSmallDevice ? 'bg-sky-500' : 'bg-transparent'} fixed top-0 left-0 right-0 z-10`}>
         {/* Logo */}
-        <Link to="/" className="flex items-center">
+        {/* <Link to="/" className="flex items-center">
           <img src={logo} alt="Logo" className="h-12 w-16 mr-4" />
-        </Link>
+        </Link> */}
+        <h5 className="text-lg text-black-800 font-bold mb-2 md:hover:text-black">FluxtonX</h5>
+      
 
         {/* Links for larger screens */}
         <div className="hidden md:flex space-x-9 font-semibold">

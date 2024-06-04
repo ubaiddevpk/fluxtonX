@@ -3,10 +3,10 @@ import backgroundImage from '../Assets/Images/pattern-bg-3.jpg';
 
 const Counter = () => {
   const counters = [
-    { id: 1, logo: '🏆', number: 300, title: 'Finished Projects' },
-    { id: 2, logo: '👥', number: 200, title: 'Clients' },
-    { id: 3, logo: '🌐', number: 300, title: 'Happy Costumer' },
-    { id: 4, logo: '🏅', number: 10, title: 'Years of Experience' },
+    { id: 1, logo: '🏆', number: 100, title: 'Finished Projects' },
+    { id: 2, logo: '👥', number: 75, title: 'Clients' },
+    { id: 3, logo: '🌐', number: 60, title: 'Happy Costumer' },
+    { id: 4, logo: '🏅', number: 6, title: 'Years of Experience' },
   ];
 
   const [counts, setCounts] = useState(counters.map(counter => 0));
