@@ -16,7 +16,7 @@ const Footer = () => {
                             <img src={lgo} className="ml-2 h-12 w-16 text-white"/>
                         </Link>
                         <p className="mt-4 max-w-xs text-white">
-                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Esse non cupiditate quae nam molestias.
+                        Empowering Growth with Smart Strategies and Innovative Solutions.
                         </p>
                         <div className="mt-6">
                             <h4 className="text-white mb-2">Subscribe to Our Newsletter</h4>
@@ -66,19 +66,19 @@ const Footer = () => {
                             <p className="font-semibold text-2xl text-white">Contact Information</p>
                             <ul className="mt-6 space-y-4 text-sm">
                                 <li>
-                                    <a href="/#" className="text-white transition hover:opacity-75">example@support.com</a>
+                                    <a href="/#" className="text-white transition hover:opacity-75">muhammadnasirpk44@gmail.com</a>
                                 </li>
                                 <li>
-                                    <a href="/#" className="text-white transition hover:opacity-75">5 xyz st., abc, Alexandria, Egypt.</a>
+                                    <a href="/#" className="text-white transition hover:opacity-75">SpeenZar, 3rd floord, office D2, pehsawar pakistan.</a>
                                 </li>
                                 <li>
-                                    <a href="/#" className="text-white transition hover:opacity-75">+20123456789</a>
+                                    <a href="/#" className="text-white transition hover:opacity-75">+923451184105</a>
                                 </li>
                             </ul>
                         </div>
                     </div>
                 </div>
-                <p className="text-xs text-white">&copy; 2022. Company Name. All rights reserved.</p>
+                <p className="text-xs text-white">&copy; 2024. FluxtonX. All rights reserved.</p>
             </div>
         </footer>
     );
