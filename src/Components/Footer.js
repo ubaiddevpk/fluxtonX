@@ -28,37 +28,37 @@ const Footer = () => {
                     </div>
                     <div className="grid grid-cols-1 gap-1 sm:grid-cols-2 lg:col-span-2 lg:grid-cols-3">
                         <div>
-                            <p className="font-semibold text-white text-2xl">Useful Links</p>
+                            <p className="font-semibold text-white text-2xl">Our Services</p>
                             <ul className="mt-6 space-y-4 text-sm">
                                 <li>
                                   
-                                    <a href="/#" className="text-white transition hover:opacity-75">Google</a>
+                                    <a href="/#" className="text-white transition hover:opacity-75">Mobile Apps Development</a>
                                 </li>
                                 <li>
-                                    <a href="/#" className="text-white transition hover:opacity-75">Dribbble</a>
+                                    <a href="/#" className="text-white transition hover:opacity-75">Websites Development</a>
                                 </li>
                                 <li>
-                                    <a href="/#" className="text-white transition hover:opacity-75">LinkedIn</a>
+                                    <a href="/#" className="text-white transition hover:opacity-75">UI UX Desiging</a>
                                 </li>
                                 <li>
-                                    <a href="/#" className="text-white transition hover:opacity-75">Wikipedia</a>
+                                    <a href="/#" className="text-white transition hover:opacity-75">Business Development</a>
                                 </li>
                             </ul>
                         </div>
                         <div>
-                            <p className="font-semibold text-white text-2xl">Resources</p>
+                            <p className="font-semibold text-white text-2xl">Follow Us</p>
                             <ul className="mt-6 space-y-4 text-sm">
                                 <li>
-                                    <a href="/#" className="text-white transition hover:opacity-75">Support</a>
+                                    <a href="/#" className="text-white transition hover:opacity-75">LinkedIn</a>
                                 </li>
                                 <li>
-                                    <a href="/#" className="text-white transition hover:opacity-75">Dashboard</a>
+                                    <a href="/#" className="text-white transition hover:opacity-75">Facebook</a>
                                 </li>
                                 <li>
-                                    <a href="/#" className="text-white transition hover:opacity-75">Drivers</a>
+                                    <a href="/#" className="text-white transition hover:opacity-75">Twitter</a>
                                 </li>
                                 <li>
-                                    <a href="/#" className="text-white transition hover:opacity-75">Projects</a>
+                                    <a href="/#" className="text-white transition hover:opacity-75">Instagram</a>
                                 </li>
                             </ul>
                         </div>
