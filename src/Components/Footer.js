@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 const Footer = () => {
     return (
         // <footer className="relative mt-20 bg-cover bg-center" style={{ backgroundImage: `url(${backgroundImage})` }}>
-        <footer className="relative mt-20 bg-sky-500">
+        <footer className="relative mt-20 bg-custom-blue">
             <div className="absolute"></div> 
             <div className="relative mx-auto max-w-screen-xl space-y-8 px-8 py-16 sm:px-12 lg:space-y-16 lg:px-16">
                 <div className="grid grid-cols-1 gap-8 lg:grid-cols-3">

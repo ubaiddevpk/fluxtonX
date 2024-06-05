@@ -34,12 +34,13 @@ const Navbar = () => {
 
   return (
     <div className="relative">
-      <nav className={`p-7 flex items-center justify-between px-6 md:px-16 ${scrolling ? 'bg-sky-500' : isSmallDevice ? 'bg-sky-500' : 'bg-transparent'} fixed top-0 left-0 right-0 z-10`}>
+      <nav className={`p-7 flex items-center justify-between px-6 md:px-16 ${scrolling ? 'bg-custom-blue' : isSmallDevice ? 'bg-custom-blue' : 'bg-transparent'} fixed top-0 left-0 right-0 z-10`}>
         {/* Logo */}
         {/* <Link to="/" className="flex items-center">
           <img src={logo} alt="Logo" className="h-12 w-16 mr-4" />
         </Link> */}
-        <h5 className="text-lg text-black-800 font-bold mb-2 md:hover:text-black">FluxtonX</h5>
+        <h1 className="text-3xl md:text-5xl font-bold mb-4 text-white">FluxtonX</h1>
+
       
 
         {/* Links for larger screens */}
@@ -59,7 +60,7 @@ const Navbar = () => {
         </div>
 
         {/* Sidebar menu for mobile */}
-        <div className={`fixed top-16 left-0 h-full bg-sky-500 z-10 transform ${isOpen ? 'translate-x-0' : '-translate-x-full'} transition-transform duration-300 ease-in-out md:hidden`}>
+        <div className={`fixed top-16 left-0 h-full bg-custom-blue z-10 transform ${isOpen ? 'translate-x-0' : '-translate-x-full'} transition-transform duration-300 ease-in-out md:hidden`}>
           <div className="p-16 space-y-6 font-semibold">
             <Link to="/" className="text-white hover:text-gray-300 block" onClick={closeMenu}>Home</Link>
             <Link to="/about" className="text-white hover:text-gray-300 block" onClick={closeMenu}>About Us</Link>

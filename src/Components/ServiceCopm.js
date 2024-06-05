@@ -6,14 +6,14 @@ const ServiceCopm = () => {
         <>
             <div className="container mx-auto px-4 md:px-16 flex flex-col md:flex-row items-center justify-between pt-16 pb-6 bg-white">
                 <div className="md:w-2/3">
-                    <h5 className="text-lg text-sky-500 font-bold mb-2">SERVICES</h5>
+                    <h5 className="text-lg text-custom-blue font-bold mb-2">SERVICES</h5>
                     <h2 className="text-3xl md:text-4xl font-bold mb-4">Services We Offer</h2>
                     <p className="text-lg text-gray-700">
                     FluxtonX offers a range of services to help our clients <br /> i.e. Businesses and Individuals Design, Develop and Maintain Mobile and Web applications. Below, you'll find an overview of the key services we provide.
                     </p>
                 </div>
                 <div className="md:w-1/3 mt-4 md:mt-0 flex justify-end">
-                    <button className="bg-sky-500 text-lg font-bold text-white px-10 py-3 rounded-bl-3xl rounded-tr-3xl border-2 border-sky-500 hover:border-2 hover:border-sky-500 hover:text-sky-500 hover:transition hover:duration-500 hover:from-transparent hover:bg-transparent hover:to-sky-500">
+                    <button className="bg-custom-blue text-lg font-bold text-white px-10 py-3 rounded-bl-3xl rounded-tr-3xl border-2 border-sky-500 hover:border-2 hover:border-sky-500 hover:text-sky-500 hover:transition hover:duration-500 hover:from-transparent hover:bg-transparent hover:to-sky-500">
                         See All Services
                     </button>
                 </div>
