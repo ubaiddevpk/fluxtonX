@@ -39,7 +39,7 @@ const Navbar = () => {
         {/* <Link to="/" className="flex items-center">
           <img src={logo} alt="Logo" className="h-12 w-16 mr-4" />
         </Link> */}
-        <h1 className="text-3xl md:text-5xl font-bold mb-4 text-white">FluxtonX</h1>
+        <h1 className="text-xl md:text-6xl font-bold mb-4 text-white">FluxtonX</h1>
 
       
 
