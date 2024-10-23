@@ -9,6 +9,7 @@ import { TbActivityHeartbeat } from "react-icons/tb";
 import AboutTabs from "../../Components/Tabs/AboutTabs";
 import HeaderTitle from "../../Components/Headers/HeaderTitle";
 import AboutCompany from "../AboutUs/AboutCompany";
+import ContactUsCard from "../../Components/Cards/ContactUsCard";
 
 const Home = () => {
   return (
@@ -19,6 +20,7 @@ const Home = () => {
       <ServicesCard />
       <RecentProjects />
       <TestimonalCard />
+      <ContactUsCard />
     </div>
   );
 };

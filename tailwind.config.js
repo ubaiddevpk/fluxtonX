@@ -18,6 +18,7 @@ export default {
     screens: {
       max1190: "1190px",
       max900: "900px",
+      max1000: "1000px",
       max820: "820px",
       max720: "720px",
       max520: "520px",

@@ -21,7 +21,7 @@ const ProjectCard = () => {
       <div
         className={`h-full w-[300px] absolute left-0 ${
           IsHovered ? "top-0" : "-top-full"
-        } z-10 bg-main opacity-90 transition-all duration-1000 ease-in-out`}
+        } z-10 bg-main opacity-40 transition-all duration-1000 ease-in-out`}
       ></div>
       {/* Overlay on hover with animation */}
       <div
