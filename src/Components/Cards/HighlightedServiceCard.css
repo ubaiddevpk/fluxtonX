@@ -1,0 +1,107 @@
+/* From Uiverse.io by MikeAndrewDesigner */
+.e-card {
+  /* margin:  auto; */
+  background: #fff;
+  box-shadow: 0px 0px 30px -9px rgba(56, 133, 254, 0.5);
+  /* border: 4px solid white; */
+  padding: 0px 20px;
+  position: relative;
+  width: 240px;
+  height: 240px;
+  border-radius: 15px;
+  overflow: hidden;
+  /* border-bottom: 4px solid #0052cc; */
+  /* border-top: 4px solid #0052cc; */
+  /* border-left: 4px solid aliceblue; */
+  /* border-right: 4px solid aliceblue; */
+}
+
+.icon {
+  width: 1.5em;
+  margin-top: -1em;
+  padding-bottom: 1em;
+  font-size: 1rem !important;
+}
+
+.infotop {
+  text-align: center;
+  font-size: 15px;
+  position: absolute;
+  top: 1.3em;
+  left: 0;
+  right: 0;
+  color: #0052cc;
+  font-weight: 600;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.name {
+  font-size: 14px;
+  font-weight: 100;
+  position: relative;
+  top: 1em;
+  text-transform: lowercase;
+}
+
+/* Base styles for the overlay */
+.e-card .expand-overlay,
+.e-card .shrink-overlay {
+  /* background-color: rgba(251, 204, 20, 0.2); Semi-transparent overlay */
+  /* background-color: rgba(251, 204, 20, 0.2); Semi-transparent overlay */
+  background-color: rgb(0, 82, 204); /* Semi-transparent overlay */
+  /* background-color: rgb(); Semi-transparent overlay */
+  transform-origin: center;
+}
+
+/* Expansion effect on hover */
+.expand-overlay {
+  transform: scale(1); /* Full scale */
+}
+
+/* Shrinking effect when not hovered */
+.shrink-overlay {
+  transform: scale(0); /* Start from the center with 0 scale */
+}
+
+/* Ensure smooth animation */
+.e-card .expand-overlay,
+.e-card .shrink-overlay {
+  transition: transform 0.7s ease-in-out;
+}
+
+.expand-overlay {
+  background-color: rgba(0, 0, 0, 0.7); /* Dark overlay for contrast */
+  transform: scale(1);
+}
+
+.shrink-overlay {
+  background-color: rgba(
+    0,
+    0,
+    0,
+    0.3
+  ); /* Lighter overlay for non-hovered state */
+  transform: scale(0);
+}
+
+.infotop {
+  position: relative;
+  z-index: 10;
+  color: black;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.e-card {
+  transition: all 0.5s ease;
+  overflow: hidden;
+  position: relative;
+  border-radius: 10px;
+}
+
+.e-card:hover .infotop {
+  color: white; /* Text turns white when hovered for better readability */
+}

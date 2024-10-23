@@ -1,0 +1,26 @@
+@media screen and (max-width: 1000px) {
+  .about-company-card {
+    flex-direction: column;
+    row-gap: 4rem;
+    padding: 5rem 1rem;
+  }
+  .about-company-detail {
+    max-width: 100%;
+  }
+}
+@media screen and (max-width: 500px) {
+  .about-company-title {
+    font-size: 1.4rem !important;
+  }
+  .about-company-desc1 {
+    font-size: 1.2rem !important;
+  }
+  .about-company-desc2 {
+    font-size: 1.1rem !important;
+  }
+}
+@media screen and (min-width: 300px) {
+  .about-company-detail-inner {
+    max-width: 100%;
+  }
+}
