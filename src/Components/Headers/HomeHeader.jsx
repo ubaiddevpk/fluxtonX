@@ -67,7 +67,7 @@ const HomeHeader = () => {
           className="absolute top-0 left-0 w-full h-full object-cover"
         />
       </AnimatePresence>
-      <div className="absolute top-0 left-[19rem] max-max1190:left-[10rem] max-max400:left-[3rem] max-max900:left-[5rem] w-full h-full flex flex-col justify-center items-start">
+      <div className="absolute top-0 left-[10rem] max-max1190:left-[10rem] max-max400:left-[3rem] max-max900:left-[5rem] w-full h-full flex flex-col justify-center items-start">
         <div className="z-10 flex flex-col gap-y-2">
           <HeaderTitle title={"Solutions for Businesses"} />
           <div

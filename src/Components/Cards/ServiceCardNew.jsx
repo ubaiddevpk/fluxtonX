@@ -10,12 +10,12 @@ const ServiceCardNew = ({ data }) => {
   const [ReadMoreIsHovered, setReadMoreIsHovered] = useState(false);
   return (
     <div
-      className="flex flex-col max-w-[300px] min-w-[250px] overflow-hidden px-4 py-4 items-center bg-white"
+      className="flex flex-col max-w-[300px] min-w-[250px] overflow-hidden px-4 py-4 items-center bg-white rounded-xl"
       style={{ boxShadow: "rgba(99, 99, 99, 0.2) 0px 2px 8px 0px" }}
       data-aos="zoom-in"
     >
-      <div className="relative w-[99%]">
-        <img src="/service-1.jpg" alt="" className="w-[100%]" />
+      <div className="relative w-[99%] rounded-xl">
+        <img src="/service-1.jpg" alt="" className="w-[100%] rounded-xl" />
         <div className="absolute -bottom-4 left-5 p-4 text-3xl z-10 bg-sec rounded-[5px] text-white">
           <data.icon />
         </div>

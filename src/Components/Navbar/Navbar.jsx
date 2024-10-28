@@ -11,9 +11,38 @@ const NavData = [
   { title: "About Us", link: "/about-us" },
 ];
 
+const SideMenu = ({ isOpen, closeMenu, activeNavItem, handleNavItemClick }) => (
+  <div
+    className={`fixed top-[12vh] right-0 w-full h-fit bg-main transition-transform transform ${
+      isOpen ? "translate-x-0" : "translate-x-full"
+    } z-40`} // Adjusted to fit below the navbar
+  >
+    <div className="flex flex-col items-center p-4 py-8 h-full">
+      {/* Ensure full height */}
+      {NavData.map((dt) => (
+        <Link
+          key={dt.title}
+          to={dt.link}
+          className={`text-[20px] font-[700] font-alegreya maxWeb1:text-[25px] maxWeb2:text-[30px] maxWeb3:text-[35px] maxWeb4:text-[40px] hover:text-sec transition-all ease-in-out duration-500 py-2 ${
+            activeNavItem === dt.title ? "!text-sec" : "text-white" // Change color based on scroll
+          }`} // Apply 'text-main' class if scrolled past 100vh
+          onClick={() => {
+            handleNavItemClick(dt.title);
+            closeMenu();
+          }}
+        >
+          {dt.title}
+        </Link>
+      ))}
+    </div>
+  </div>
+);
+
 const Navbar = () => {
   const [activeNavItem, setActiveNavItem] = useState(""); // State to track the active navigation item
   const [isScrolledPast, setIsScrolledPast] = useState(false); // State to track if scrolled past 100vh
+
+  const [OpenSideMenu, setOpenSideMenu] = useState(false);
 
   const handleNavItemClick = (item) => {
     setActiveNavItem(item);
@@ -57,7 +86,7 @@ const Navbar = () => {
     <div
       className={`fixed top-0 left-0 w-full z-30 transition-all duration-300 h-[12vh] min-h-[89px] ${
         isScrolledPast ? "p-3" : "bg-transparent"
-      }`} // Smooth transition between states
+      }`}
     >
       <div
         className={`flex justify-between items-center h-full ${
@@ -109,14 +138,26 @@ const Navbar = () => {
               </div>
             ))}
           </div>
-          <div className={`${isScrolledPast ? "!h-full" : ""}`}>
+          <div className={`${isScrolledPast ? "!h-fit" : "!h-fit"}`}>
             <ConsulatationCallBtn isScrolledPast={isScrolledPast} />
           </div>
         </div>
+
         <div className={`${isScrolledPast && "pr-3"} max-max820:flex hidden`}>
-          <MenuBtn />
+          <MenuBtn
+            setOpenSideMenu={setOpenSideMenu}
+            OpenSideMenu={OpenSideMenu}
+          />
         </div>
       </div>
+
+      {/* Side Menu for mobile screens */}
+      <SideMenu
+        isOpen={OpenSideMenu}
+        closeMenu={() => setOpenSideMenu(false)}
+        handleNavItemClick={handleNavItemClick}
+        activeNavItem={activeNavItem}
+      />
     </div>
   );
 };

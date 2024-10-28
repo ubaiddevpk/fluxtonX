@@ -40,18 +40,18 @@ const StyledWrapper = styled.div`
   .form-control input {
     background-color: transparent;
     border: 0;
-    border-bottom: 2px #fff solid;
+    border-bottom: 2px #000 solid;
     display: block;
     width: 100%;
     padding: 15px 10px;
     font-size: 18px;
-    color: #fff;
+    color: #000;
   }
 
   .form-control input:focus,
   .form-control input:valid {
     outline: 0;
-    border-bottom-color: #fbcc14;
+    border-bottom-color: #000;
   }
 
   .form-control label {
@@ -65,13 +65,13 @@ const StyledWrapper = styled.div`
     display: inline-block;
     font-size: 18px;
     min-width: 5px;
-    color: #fff;
+    color: #00000097;
     transition: 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
   }
 
   .form-control input:focus + label span,
   .form-control input:valid + label span {
-    color: #fbcc14;
+    color: #000;
     transform: translateY(-30px);
   }
   .form-control input:focus + label {

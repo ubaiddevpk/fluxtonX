@@ -4,8 +4,9 @@ export default {
   theme: {
     extend: {
       colors: {
-        main: "#0052cc",
-        sec: "#FBCC14",
+        main: "#0052cc", // rgb(0, 82, 204)
+        sec: "#FBCC14", // rgb(251, 204, 20)
+        sec2: "#FDE37A", // rgb(253, 227, 122)
       },
       fontFamily: {
         montserrat: ["Montserrat", "sans-serif"],

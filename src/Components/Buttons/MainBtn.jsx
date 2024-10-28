@@ -25,7 +25,7 @@ const StyledWrapper = styled.div`
     color: #0052cc;
     font-weight: 700;
     transition: 0.6s;
-    box-shadow: 0px 0px 60px #1f4c65;
+    box-shadow: 0px 0px 15px #1f4c65;
   }
 
   /* Scale effect on click */

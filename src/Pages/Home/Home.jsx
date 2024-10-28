@@ -10,6 +10,7 @@ import AboutTabs from "../../Components/Tabs/AboutTabs";
 import HeaderTitle from "../../Components/Headers/HeaderTitle";
 import AboutCompany from "../AboutUs/AboutCompany";
 import ContactUsCard from "../../Components/Cards/ContactUsCard";
+import ContactForm from "../../Components/Forms/ContactForm";
 
 const Home = () => {
   return (
@@ -20,6 +21,10 @@ const Home = () => {
       <ServicesCard />
       <RecentProjects />
       <TestimonalCard />
+      {/* <div className="w-full flex justify-center items-center py-8">
+        <img src="/contactusimage.png" alt="" className="max-w-[600px]" />
+        <ContactForm />
+      </div> */}
       <ContactUsCard />
     </div>
   );
