@@ -9,12 +9,12 @@ const AboutUs = () => {
     <div>
       <BannerCard title={"About Us"} imgUrl={"/aboutusteam.jpg"} />
       <AboutCompany />
-      <div className="flex flex-col items-center justify-center gap-y-6 py-8  bg-[aliceblue]">
+      <div className="flex flex-col items-center justify-center gap-y-6 pt-8  bg-[aliceblue]">
         <HeaderTitle title={"Our Team"} />
-        <div className="text-6xl font-bold font-alegreya px-8 text-center">
+        <div className="text-6xl max-max450:text-4xl font-bold font-alegreya px-8 text-center">
           Meet Our
           <span
-            className="font-dacingscript text-7xl text-sec"
+            className="font-dacingscript text-7xl max-max450:text-5xl text-sec"
             style={{
               textShadow: "1px 1px 2px rgba(0, 0, 0, 1)",
             }}

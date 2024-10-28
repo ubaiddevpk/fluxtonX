@@ -14,12 +14,7 @@ const AboutCompanyCard = () => {
   return (
     <div className="relative" data-aos="fade-right">
       <img src="/about1.png" alt="" className="about-img" />
-      <div
-        className="absolute top-5 right-20 text-3xl text-main font-montserrat font-bold expes"
-        style={{
-          textShadow: "0px 0px 40px #000",
-        }}
-      >
+      <div className="absolute top-5 right-20 text-3xl text-main font-montserrat font-bold expes">
         10+ Experience
       </div>
       <motion.div

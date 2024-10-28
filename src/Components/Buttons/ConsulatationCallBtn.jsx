@@ -1,10 +1,20 @@
 import React from "react";
 import styled from "styled-components";
+import { useLocation } from "react-router-dom";
 
 const ConsulatationCallBtn = ({ isScrolledPast }) => {
+  const location = useLocation();
+
+  // If we're on the home page, don't render the button
+  if (location.pathname === "/") {
+    return null;
+  }
+
   return (
     <StyledWrapper>
-      <button className="cssbuttons-io-button">
+      <button
+        className={`cssbuttons-io-button ${isScrolledPast ? "scrolled" : ""}`}
+      >
         Get started
         <div className="icon">
           <svg
@@ -35,16 +45,22 @@ const StyledWrapper = styled.div`
     font-size: 17px;
     font-weight: 500;
     border-radius: 0.9em;
-    border: none;
+    border: 2px solid white;
     letter-spacing: 0.05em;
     display: flex;
     align-items: center;
-    box-shadow: inset 0 0 1.6em -0.6em #714da6;
+    /* box-shadow: inset 0 0 1.6em -0.6em black; */
     overflow: hidden;
     position: relative;
     height: 2.8em;
     padding-right: 3.3em;
     cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  .cssbuttons-io-button.scrolled {
+    background: #fff;
+    color: black;
   }
 
   .cssbuttons-io-button .icon {
@@ -56,8 +72,8 @@ const StyledWrapper = styled.div`
     justify-content: center;
     height: 85%;
     width: 2.2em;
-    border-radius: 0.7em;
-    box-shadow: 0.1em 0.1em 0.6em 0.2em #7b52b9;
+    border-radius: 0.8em;
+    /* box-shadow: 0.1em 0.1em 0.6em 0.2em #00; */
     right: 0.3em;
     bottom: 3px;
     transition: all 0.3s;

@@ -5,9 +5,21 @@ import {
   FaChartBar,
   FaLock,
   FaChartPie,
+  FaMobileAlt,
+  FaGlobe,
 } from "react-icons/fa";
 
 const ServicesData = [
+  {
+    title: "Web Development",
+    desc: "Crafting dynamic and responsive web applications tailored to meet your business needs, ensuring a seamless user experience.",
+    icon: FaGlobe,
+  },
+  {
+    title: "App Development",
+    desc: "Designing and building mobile applications for Android and iOS, delivering engaging user experiences and robust functionality.",
+    icon: FaMobileAlt,
+  },
   {
     title: "Product Development",
     desc: "Our team specializes in building innovative products, delivering scalable solutions tailored to meet the specific needs of your business.",

@@ -39,7 +39,7 @@ const BannerCard = ({ title, imgUrl }) => {
         </div>
       </div>
       <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-[#4D8CEC] to-transparent flex flex-col justify-center items-center gap-y-4"></div>
-      <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-t from-sec2 to-transparent flex flex-col justify-center items-center gap-y-4"></div>
+      <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-t from-[#fde37ab9] to-transparent flex flex-col justify-center items-center gap-y-4"></div>
       <div className="absolute top-0 left-0 w-full h-full bg-black opacity-40 flex flex-col justify-center items-center gap-y-4"></div>
     </div>
   );

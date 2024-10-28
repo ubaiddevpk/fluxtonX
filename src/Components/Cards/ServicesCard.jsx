@@ -6,8 +6,10 @@ import { motion } from "framer-motion"; // Import motion from framer-motion
 import AOS from "aos";
 import "aos/dist/aos.css";
 import MainBtn from "../Buttons/MainBtn";
+import { useNavigate } from "react-router-dom";
 
 const ServicesCard = () => {
+  const navigate = useNavigate();
   useEffect(() => {
     AOS.init({ duration: 1000 }); // Initialize AOS for animations
   }, []);
@@ -79,7 +81,12 @@ const ServicesCard = () => {
         className="py-8 shadow-lg flex items-center justify-center"
         style={{ backgroundColor: "rgba(0,0,0,.05)" }}
       >
-        <MainBtn title={"See More"} onClick={() => {}} />
+        <MainBtn
+          title={"See More"}
+          onClick={() => {
+            navigate("/services");
+          }}
+        />
       </div>
     </div>
   );

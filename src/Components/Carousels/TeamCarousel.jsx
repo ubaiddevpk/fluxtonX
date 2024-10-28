@@ -26,6 +26,16 @@ const StyledTitleText = styled.div.attrs({
   }
 `;
 
+const StyledSliderWrapper = styled.div`
+  .slick-slide {
+    padding: 0 10px; // Add horizontal padding to create gap
+  }
+
+  .slick-list {
+    margin: 0 -10px; // Compensate for the padding
+  }
+`;
+
 const TeamCarousel = () => {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   const handleResize = () => {
@@ -45,7 +55,7 @@ const TeamCarousel = () => {
   ) : (
     true && (
       <CarouselWrapper className="gap-y-10 flex flex-col justify-between items-center w-full h-[600px]">
-        <div className="w-[80%]">
+        <StyledSliderWrapper className="w-[80%] max-max800:max-w-[350px]">
           <Slider
             dots={true}
             infinite={true}
@@ -55,7 +65,7 @@ const TeamCarousel = () => {
             autoplay={true}
             draggable={true}
             centerMode={windowWidth < 500 ? true : false} // Set centerMode to false for wider screens
-            centerPadding={windowWidth < 400 ? "20%" : "0"}
+            centerPadding={windowWidth < 400 ? "20%" : "30%"}
             arrows={false}
             responsive={[
               {
@@ -82,10 +92,10 @@ const TeamCarousel = () => {
             ]}
           >
             {[1, 2, 3, 4, 5].map((dt, i) => (
-              <TeamCard data={dt} />
+              <TeamCard key={i} data={dt} />
             ))}
           </Slider>
-        </div>
+        </StyledSliderWrapper>
       </CarouselWrapper>
     )
   );

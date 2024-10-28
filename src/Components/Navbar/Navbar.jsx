@@ -113,7 +113,7 @@ const Navbar = () => {
             FLU<span className="text-sec">X</span>TONX
           </div>
         </div>
-        <div className="flex items-center gap-x-20 h-full max-max820:hidden">
+        <div className="flex items-center gap-x-10 h-full max-max820:hidden  pr-5">
           <div className="flex gap-x-4 items-center">
             {NavData.map((dt) => (
               <div className="relative overflow-hidden" key={dt.title}>
@@ -138,6 +138,7 @@ const Navbar = () => {
               </div>
             ))}
           </div>
+          {/* contact us btn */}
           <div className={`${isScrolledPast ? "!h-fit" : "!h-fit"}`}>
             <ConsulatationCallBtn isScrolledPast={isScrolledPast} />
           </div>

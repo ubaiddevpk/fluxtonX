@@ -6,10 +6,12 @@ import TabList from "@mui/lab/TabList";
 import TabPanel from "@mui/lab/TabPanel";
 import { TiArrowForward } from "react-icons/ti";
 import MainBtn from "../Buttons/MainBtn";
+import { useNavigate } from "react-router-dom";
 
 export default function AboutTabs() {
   const [value, setValue] = React.useState("1");
   const [orientation, setOrientation] = React.useState("horizontal");
+  const navigate = useNavigate();
 
   // Monitor window width and update tab orientation accordingly
   React.useEffect(() => {
@@ -68,7 +70,12 @@ export default function AboutTabs() {
               <div className=" max1100:text-[1rem]">Your product vision</div>
             </div>
           </div>
-          <MainBtn title={"Know More About Us"} onClick={() => {}} />
+          <MainBtn
+            title={"Know More About Us"}
+            onClick={() => {
+              navigate("/about-us");
+            }}
+          />
         </TabPanel>
         <TabPanel value="2">
           <div className="font-alegreya max1100:text-[1rem]">
@@ -85,7 +92,12 @@ export default function AboutTabs() {
               <div className="">Your product vision</div>
             </div>
           </div>
-          <MainBtn title={"Know More About Us"} onClick={() => {}} />
+          <MainBtn
+            title={"Know More About Us"}
+            onClick={() => {
+              navigate("/about-us");
+            }}
+          />
         </TabPanel>
         <TabPanel value="3">
           <div className="font-alegreya max1100:text-[1rem]">
@@ -102,7 +114,12 @@ export default function AboutTabs() {
               <div className="">Your product vision</div>
             </div>
           </div>
-          <MainBtn title={"Know More About Us"} onClick={() => {}} />
+          <MainBtn
+            title={"Know More About Us"}
+            onClick={() => {
+              navigate("/about-us");
+            }}
+          />
         </TabPanel>
       </TabContext>
     </Box>

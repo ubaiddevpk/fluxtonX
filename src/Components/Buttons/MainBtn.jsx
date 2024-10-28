@@ -25,7 +25,7 @@ const StyledWrapper = styled.div`
     color: #0052cc;
     font-weight: 700;
     transition: 0.6s;
-    box-shadow: 0px 0px 15px #1f4c65;
+    /* box-shadow: 0px 0px 15px #1f4c65; */
   }
 
   /* Scale effect on click */
@@ -41,7 +41,7 @@ const StyledWrapper = styled.div`
       rgba(0, 82, 204, 0.681) 0%,
       rgba(251, 204, 20, 0.873) 60%
     );
-    color: white;
+    color: black;
   }
 `;
 

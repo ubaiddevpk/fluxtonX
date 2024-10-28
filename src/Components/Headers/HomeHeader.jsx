@@ -42,22 +42,10 @@ const HomeHeader = () => {
   return (
     <div className="h-[80vh] relative bg-black main-cont">
       <AnimatePresence mode="wait" custom={direction}>
-        <motion.video
+        <motion.img
           key={currentVideo}
-          src={
-            currentVideo === 0
-              ? "/video.mp4"
-              : currentVideo === 1
-              ? "/video1.mp4"
-              : currentVideo === 2
-              ? "/video2.mp4"
-              : currentVideo === 3 && "/video3.mp4"
-          }
+          src={`/img${currentVideo + 1}.jpg`}
           preload="auto" // Preloads the video
-          autoPlay
-          loop
-          muted
-          playsInline
           custom={direction}
           variants={variants}
           initial="enter"
@@ -87,18 +75,9 @@ const HomeHeader = () => {
           </div>
         </div>
       </div>
-      <motion.div
-        className="absolute top-0 left-0 w-full h-full bg-black opacity-80"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 0.5 }}
-        transition={{ duration: 1.5 }}
-      />
-      <motion.div
-        className="absolute top-0 left-0 w-full h-full bg-black opacity-50"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 0.5 }}
-        transition={{ duration: 1.5 }}
-      />
+      <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-sec2 to-transparent flex flex-col justify-center items-center gap-y-4"></div>
+      <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-t from-[#4D8CEC] to-transparent flex flex-col justify-center items-center gap-y-4"></div>
+      <div className="absolute top-0 left-0 w-full h-full bg-black opacity-60 flex flex-col justify-center items-center gap-y-4"></div>
     </div>
   );
 };

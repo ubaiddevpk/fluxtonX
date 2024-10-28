@@ -11,8 +11,8 @@ const Footer = () => {
   }, []);
   return (
     <footer className="bg-main text-white py-10 w-full font-spartan">
-      <div className="mx-auto w-full px-8">
-        <div className="flex w-full justify-between items-start max965:flex-col max965:items-center gap-y-6">
+      <div className="mx-auto w-full ">
+        <div className="flex w-full justify-between items-start max965:flex-col max965:items-center gap-y-6 px-8">
           <div
             className="flex flex-col items-center max-w-[300px]"
             data-aos="fade-right"
@@ -79,7 +79,7 @@ const Footer = () => {
             </ul>
           </div>
           <div
-            className="w-full sm:w-4/12 max-w-[400px] max550:w-fit max550:max-w-[300px] flex flex-col gap-y-2"
+            className="w-[400px] max-w-[400px] max550:w-fit max550:max-w-[300px] flex flex-col gap-y-2"
             data-aos="fade-left"
           >
             <h3 className="text-2xl font-bold text-left sm:text-left px-1 font-alegreya">
@@ -106,10 +106,10 @@ const Footer = () => {
               <li className="flex items-center gap-1">
                 <a
                   href="https://maps.app.goo.gl/t7SeZD7Mw3RqwrV57"
-                  className="hover:underline flex items-start gap-2 font-alegreya"
+                  className="hover:underline flex items-start gap-2 font-alegreya max-w-[200px] justify-start"
                 >
-                  <FaLocationDot size={20} /> Office No. B5 Town Center Plaza
-                  Abdara Road , University Road Peshawar.
+                  <FaLocationDot className="!text-4xl" /> Office No. B5 Town
+                  Center Plaza Abdara Road , University Road Peshawar.
                 </a>
               </li>
             </ul>

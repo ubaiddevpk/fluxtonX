@@ -6,12 +6,12 @@ const TeamCard = () => {
 
   return (
     <div
-      className="text-black w-[350px] h-[400px] relative mb-20 rounded-2xl"
+      className="text-black max-max900:w-[300px] max-max770:w-full max-w-[350px] w-[350px] h-[400px] relative mb-20 rounded-2xl"
       onMouseEnter={() => setisHovered(true)}
       onMouseLeave={() => setisHovered(false)}
     >
       {/* Background image with hover scale effect */}
-      <div className="overflow-hidden absolute inset-0 w-[350px] h-[400px]">
+      <div className="overflow-hidden absolute inset-0 max-max900:w-[300px] max-max770:w-full max-w-[350px] w-[350px] h-[400px]">
         <motion.img
           src="/developer.jpg"
           className=" w-full h-full object-cover rounded-2xl"
