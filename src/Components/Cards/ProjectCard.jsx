@@ -1,29 +1,39 @@
 import React, { useState } from "react";
 import { FaLongArrowAltRight } from "react-icons/fa";
+import { motion } from "framer-motion";
 
-const ProjectCard = () => {
+import PropTypes from "prop-types";
+
+const ProjectCard = ({ data, custom }) => {
   const [IsHovered, setIsHovered] = useState(false);
 
   return (
-    <div
-      className="relative w-[300px] h-[400px] flex flex-col justify-end items-center rounded-[20px] overflow-hidden"
+    <motion.div
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.2 }}
+      transition={{ duration: 0.6, ease: "easeOut", delay: custom * 0.1 }}
+      whileHover={{ scale: 1.07 }}
+      whileTap={{ scale: 0.97 }}
+      className="relative w-[300px] h-[400px] flex flex-col justify-end items-center rounded-[20px] overflow-hidden text-center  cursor-pointer transition-transform duration-300"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
       <img
-        src="/robot.jpg"
+        src={data.img}
         className="h-full w-[300px] absolute left-0 top-0 object-cover -z-10"
-        alt=""
+        alt={data.title}
       />
       <div className="h-full w-[300px] absolute left-0 top-0 object-cover z-10 bg-black opacity-30"></div>
 
-      {/* Overlay on hover with animation */}
+      {/* Overlay on hover */}
       <div
         className={`h-full w-[300px] absolute left-0 ${
           IsHovered ? "top-0" : "-top-full"
         } z-10 bg-main opacity-40 transition-all duration-1000 ease-in-out`}
       ></div>
-      {/* Overlay on hover with animation */}
+
+      {/* Arrow button */}
       <div
         className={`h-[40px] w-[40px] rounded-full border-2 border-white absolute right-5 ${
           IsHovered ? "top-5" : "-top-full"
@@ -44,7 +54,7 @@ const ProjectCard = () => {
             textShadow: "0px 0px 10px #000",
           }}
         >
-          Smart Vision
+          {data.title}
         </div>
         <div
           className="font-alegreya"
@@ -52,11 +62,20 @@ const ProjectCard = () => {
             textShadow: "0px 0px 10px #000",
           }}
         >
-          Design / Ideas
+          {data.category}
         </div>
       </div>
-    </div>
+    </motion.div>
   );
+};
+
+ProjectCard.propTypes = {
+  data: PropTypes.shape({
+    img: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
+    category: PropTypes.string,
+  }).isRequired,
+  custom: PropTypes.number,
 };
 
 export default ProjectCard;

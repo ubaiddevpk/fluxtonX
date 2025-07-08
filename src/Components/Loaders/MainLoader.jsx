@@ -5,9 +5,13 @@ const MainLoader = () => {
   return (
     <StyledWrapper>
       <div className="loader">
+        {/* ✅ Logo added above Welcome message */}
+        <img src="/logo2.png" alt="Logo" className="loader-logo" />
+
         <div className="simple-text font-alegreya whitespace-nowrap font-bold text-xl">
           Welcome to FluxtonX!
         </div>
+
         <div className="cube">
           <div className="face middle front">
             <div className="cube cube-front">
@@ -79,20 +83,25 @@ const StyledWrapper = styled.div`
   .loader {
     position: relative;
     display: flex;
+    flex-direction: column; /* stack logo + text + cube vertically */
     align-items: center;
     justify-content: center;
   }
 
+  .loader-logo {
+    width: 100px;
+    margin-bottom: 20px;
+    z-index: 10;
+  }
+
   .simple-text {
-    position: absolute;
-    top: -100px;
+    margin-bottom: 50px; /* Adjust spacing between text and cube */
     color: #0052cc;
-    /* width: 200px; */
     text-align: center;
   }
 
   .cube {
-    position: absolute;
+    position: relative;
     width: 40px;
     transform-style: preserve-3d;
     transform: rotateX(-30deg) rotateY(45deg);
@@ -100,19 +109,19 @@ const StyledWrapper = styled.div`
     cursor: pointer;
     animation: rotateCube 10s infinite linear;
   }
-  /* change the distance between cubes with translateX */
+
   .cube-front,
   .cube-back {
     transform: translateX(40px) translateZ(-20px);
     animation: none;
   }
-  /* change the distance between cubes with translateZ */
+
   .cube-top,
   .cube-bottom {
     transform: translateZ(20px);
     animation: none;
   }
-  /* change the distance between cubes with translateX */
+
   .cube-left,
   .cube-right {
     transform: translateX(40px) translateZ(-20px);

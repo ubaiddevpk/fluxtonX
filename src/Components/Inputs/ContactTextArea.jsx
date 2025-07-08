@@ -1,21 +1,13 @@
 import React from "react";
 import styled from "styled-components";
 
-const ContactTextArea = ({
-  Value,
-  setValue,
-  placeholder,
-  type,
-  Label,
-  Width,
-}) => {
+const ContactTextArea = ({ Value, setValue, placeholder, Label }) => {
   return (
     <StyledWrapper>
       <div className="form-control">
         <textarea
-          type={type}
           placeholder={placeholder}
-          required="true"
+          required
           value={Value}
           onChange={(e) => setValue(e.target.value)}
           className="font-alegreya"
@@ -25,8 +17,9 @@ const ContactTextArea = ({
             const dur = `${i * 50}ms`;
             return (
               <span
+                key={i}
                 className="font-alegreya"
-                style={{ transitionDelay: dur.toString() }}
+                style={{ transitionDelay: dur }}
               >
                 {dt}
               </span>
@@ -54,6 +47,8 @@ const StyledWrapper = styled.div`
     padding: 15px 10px;
     font-size: 18px;
     color: #000;
+    resize: vertical;
+    min-height: 120px;
   }
 
   .form-control textarea:focus,
@@ -82,6 +77,7 @@ const StyledWrapper = styled.div`
     color: #000;
     transform: translateY(-30px);
   }
+
   .form-control textarea:focus + label {
     left: 0px !important;
     transition: all 0.9s ease-in-out;

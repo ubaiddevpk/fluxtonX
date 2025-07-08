@@ -7,6 +7,7 @@ import { CarouselWrapper } from "./CarouselWrapper";
 import styled from "styled-components";
 import TestimonalC from "../Cards/TestimonalC";
 import TeamCard from "../Cards/TeamCard";
+import teamData from "../../utils/teamData";
 
 const StyledTitleText = styled.div.attrs({
   className: "font-[600] text-[3em] text-[#465462] font-montserrat text-center",
@@ -91,8 +92,8 @@ const TeamCarousel = () => {
               },
             ]}
           >
-            {[1, 2, 3, 4, 5].map((dt, i) => (
-              <TeamCard key={i} data={dt} />
+            {teamData.map((mamber) => (
+              <TeamCard key={mamber.id} data={mamber} />
             ))}
           </Slider>
         </StyledSliderWrapper>

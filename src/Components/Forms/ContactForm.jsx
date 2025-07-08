@@ -5,29 +5,32 @@ const ContactForm = () => {
   return (
     <StyledWrapper>
       <form className="form">
-        <p className="title whitespace-nowrap">Start Your Project Today!</p>
+        <p className="title">Start Your Project Today!</p>
         <p className="message">
-          "Turn your ideas into reality—start your project with confidence and
-          create something extraordinary."
+          Turn your ideas into reality—start your project with confidence and
+          create something extraordinary.
         </p>
+
         <label>
-          <input required placeholder="" type="text" className="input" />
+          <input required type="text" className="input" />
           <span>Firstname</span>
         </label>
 
         <label>
-          <input required placeholder="" type="email" className="input" />
+          <input required type="email" className="input" />
           <span>Email</span>
         </label>
 
         <label>
-          <input required placeholder="" type="text" className="input" />
+          <input required type="text" className="input" />
           <span>Topic</span>
         </label>
+
         <label>
-          <textarea required placeholder="" className="input" />
+          <textarea required className="input textarea" />
           <span>Message</span>
         </label>
+
         <button className="submit">Submit</button>
       </form>
     </StyledWrapper>
@@ -35,138 +38,134 @@ const ContactForm = () => {
 };
 
 const StyledWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+
   .form {
     display: flex;
     flex-direction: column;
-    gap: 10px;
-    min-width: 350px;
+    gap: 16px;
+    width: 100%;
     max-width: 400px;
-    background-color: #fff;
-    padding: 20px;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
     border-radius: 20px;
-    position: relative;
+    padding: 30px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    color: #fff;
+    animation: fadeIn 0.8s ease;
   }
 
   .title {
     font-size: 28px;
-    color: royalblue;
-    font-weight: 600;
-    letter-spacing: -1px;
-    position: relative;
-    display: flex;
-    align-items: center;
-    padding-left: 30px;
-  }
-
-  .title::before,
-  .title::after {
-    position: absolute;
-    content: "";
-    height: 16px;
-    width: 16px;
-    border-radius: 50%;
-    left: 0px;
-    background-color: #fbcc14;
-  }
-
-  .title::before {
-    width: 18px;
-    height: 18px;
-    background-color: #fbcc14;
-  }
-
-  .title::after {
-    width: 18px;
-    height: 18px;
-    animation: pulse 1s linear infinite;
-  }
-
-  .message,
-  .signin {
-    color: rgba(88, 87, 87, 0.822);
-    font-size: 14px;
-  }
-
-  .signin {
+    font-weight: 700;
+    color: #ffffff;
     text-align: center;
-  }
-
-  .signin a {
-    color: royalblue;
-  }
-
-  .signin a:hover {
-    text-decoration: underline royalblue;
-  }
-
-  .flex {
-    display: flex;
-    width: 100%;
-    gap: 6px;
-  }
-
-  .form label {
+    margin-bottom: 10px;
     position: relative;
   }
 
-  .form label .input {
-    width: 100%;
-    padding: 10px 10px 20px 10px;
-    outline: 0;
-    border: 1px solid rgba(105, 105, 105, 0.397);
-    border-radius: 10px;
+  .title::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -6px;
+    transform: translateX(-50%);
+    height: 3px;
+    width: 50px;
+    background: #fbcc14;
+    border-radius: 2px;
   }
 
-  .form label .input + span {
+  .message {
+    font-size: 14px;
+    text-align: center;
+    opacity: 0.85;
+  }
+
+  label {
+    position: relative;
+  }
+
+  .input {
+    width: 100%;
+    padding: 12px 12px 12px 12px;
+    border: none;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.2);
+    color: #fff;
+    font-size: 14px;
+    outline: none;
+    transition: background 0.3s ease, border 0.3s ease;
+  }
+
+  .input:focus {
+    background: rgba(255, 255, 255, 0.3);
+    border: 1px solid #fbcc14;
+  }
+
+  .input + span {
     position: absolute;
-    left: 10px;
-    top: 15px;
-    color: grey;
-    font-size: 0.9em;
-    cursor: text;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 14px;
+    pointer-events: none;
     transition: 0.3s ease;
   }
 
-  .form label .input:placeholder-shown + span {
-    top: 15px;
-    font-size: 0.9em;
+  .input:focus + span,
+  .input:not(:placeholder-shown) + span {
+    top: -8px;
+    left: 10px;
+    background: rgba(0, 0, 0, 0.3);
+    padding: 0 5px;
+    font-size: 12px;
+    border-radius: 4px;
   }
 
-  .form label .input:focus + span,
-  .form label .input:valid + span {
-    top: 30px;
-    font-size: 0.7em;
-    font-weight: 600;
-  }
-
-  .form label .input:valid + span {
-    color: green;
+  .textarea {
+    resize: vertical;
+    min-height: 100px;
   }
 
   .submit {
+    background: #fbcc14;
+    color: #000;
+    padding: 12px;
     border: none;
-    outline: none;
-    background-color: royalblue;
-    padding: 10px;
     border-radius: 10px;
-    color: #fff;
     font-size: 16px;
-    transform: 0.3s ease;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
   }
 
   .submit:hover {
-    background-color: rgb(56, 90, 194);
+    background: #e0b913;
+    transform: translateY(-2px);
   }
 
-  @keyframes pulse {
+  @keyframes fadeIn {
     from {
-      transform: scale(0.9);
-      opacity: 1;
-    }
-
-    to {
-      transform: scale(1.8);
       opacity: 0;
+      translateY: 20px;
+    }
+    to {
+      opacity: 1;
+      translateY: 0;
+    }
+  }
+
+  @media (max-width: 500px) {
+    .form {
+      padding: 20px;
+    }
+    .title {
+      font-size: 22px;
     }
   }
 `;

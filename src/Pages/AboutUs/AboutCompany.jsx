@@ -19,7 +19,7 @@ const AboutCompany = () => {
             </div>
             <div className="text-2xl font-semibold font-alegreya tracking-widest max1100:text-xl about-company-desc2 text-gray-800">
               Bring to the table win-win survival strategies to ensure proactive
-              domination at the end of the day, going forward.
+              domination at the end of the day,   going forward.
             </div>
           </div>
           <div className="">

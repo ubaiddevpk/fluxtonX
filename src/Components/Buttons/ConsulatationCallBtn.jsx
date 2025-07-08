@@ -1,6 +1,7 @@
-import React from "react";
+
 import styled from "styled-components";
 import { useLocation } from "react-router-dom";
+import { Link } from "react-router-dom"; // Ensure you have react-router-dom installed
 
 const ConsulatationCallBtn = ({ isScrolledPast }) => {
   const location = useLocation();
@@ -12,10 +13,11 @@ const ConsulatationCallBtn = ({ isScrolledPast }) => {
 
   return (
     <StyledWrapper>
+      <Link to="/#contact-us" className="no-underline">
       <button
         className={`cssbuttons-io-button ${isScrolledPast ? "scrolled" : ""}`}
       >
-        Get started
+        Get started 
         <div className="icon">
           <svg
             height={24}
@@ -31,6 +33,7 @@ const ConsulatationCallBtn = ({ isScrolledPast }) => {
           </svg>
         </div>
       </button>
+      </Link>
     </StyledWrapper>
   );
 };

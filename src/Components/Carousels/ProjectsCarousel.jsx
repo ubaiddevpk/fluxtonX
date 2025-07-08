@@ -1,11 +1,15 @@
-import React, { useEffect, useState } from "react";
+import  { useEffect, useState } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./style.css";
 import { CarouselWrapper } from "./CarouselWrapper";
-import TestimonalC from "../Cards/TestimonalC";
+// import TestimonalC from "../Cards/TestimonalC";
 import ProjectCard from "../Cards/ProjectCard";
+import ProjectData from "../../utils/projectdata";
+import MainBtn from "../Buttons/MainBtn";
+// import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom"; // Ensure you have react-router-dom installed
 
 const ProjectsCarousel = () => {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
@@ -57,10 +61,16 @@ const ProjectsCarousel = () => {
             },
           ]}
         >
-          {[1, 2, 3, 4, 5].map((dt, i) => (
-            <ProjectCard data={dt} />
+          {ProjectData.map((dt, i) => (
+            <ProjectCard key={i} data={dt} />
           ))}
         </Slider>
+
+        <div className="flex justify-center mt-8">
+          <Link to="/portfolio" className="no-underline">
+            <MainBtn title={"See More"} />
+          </Link>
+        </div>
       </div>
     </CarouselWrapper>
   );

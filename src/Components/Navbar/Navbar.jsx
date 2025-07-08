@@ -1,39 +1,91 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import "./Navbar.css";
 import ConsulatationCallBtn from "../Buttons/ConsulatationCallBtn";
 import MenuBtn from "../Buttons/MenuBtn";
+import { FaHome, FaCogs, FaBriefcase, FaInfoCircle } from "react-icons/fa";
 
 const NavData = [
-  { title: "Home", link: "/" },
-  { title: "Services", link: "/services" },
-  { title: "Portfolio", link: "/portfolio" },
-  { title: "About Us", link: "/about-us" },
+  { title: "Home", link: "/", icon: FaHome },
+  { title: "Services", link: "/services", icon: FaCogs },
+  { title: "Portfolio", link: "/portfolio", icon: FaBriefcase },
+  { title: "About Us", link: "/about-us", icon: FaInfoCircle },
 ];
 
 const SideMenu = ({ isOpen, closeMenu, activeNavItem, handleNavItemClick }) => (
   <div
-    className={`fixed top-[12vh] right-0 w-full h-fit bg-main transition-transform transform ${
+    className={`fixed top-0 right-0 h-screen w-[85vw] max-w-[350px] bg-gradient-to-br from-main via-blue-900 to-sec transition-transform duration-500 transform ${
       isOpen ? "translate-x-0" : "translate-x-full"
-    } z-40`} // Adjusted to fit below the navbar
+    } z-50 shadow-2xl rounded-tl-3xl rounded-bl-3xl flex flex-col`}
+    style={{ borderTopLeftRadius: 32, borderBottomLeftRadius: 32 }}
+    onTouchStart={(e) => {
+      e.stopPropagation();
+      e.currentTarget.dataset.touchStartX = e.touches[0].clientX;
+    }}
+    onTouchMove={(e) => {
+      e.stopPropagation();
+      const startX = parseFloat(e.currentTarget.dataset.touchStartX || 0);
+      const currentX = e.touches[0].clientX;
+      if (startX - currentX > 60) {
+        closeMenu();
+      }
+    }}
   >
-    <div className="flex flex-col items-center p-4 py-8 h-full">
-      {/* Ensure full height */}
-      {NavData.map((dt) => (
-        <Link
-          key={dt.title}
-          to={dt.link}
-          className={`text-[20px] font-[700] font-alegreya maxWeb1:text-[25px] maxWeb2:text-[30px] maxWeb3:text-[35px] maxWeb4:text-[40px] hover:text-sec transition-all ease-in-out duration-500 py-2 ${
-            activeNavItem === dt.title ? "!text-sec" : "text-white" // Change color based on scroll
-          }`} // Apply 'text-main' class if scrolled past 100vh
-          onClick={() => {
-            handleNavItemClick(dt.title);
-            closeMenu();
-          }}
-        >
-          {dt.title}
-        </Link>
-      ))}
+    {/* Cancel/Close Button */}
+    <button
+      className="absolute top-4 right-4 text-white text-2xl bg-white/10 hover:bg-white/20 border border-white/30 rounded-full p-2 shadow-lg transition-colors duration-300 z-50 backdrop-blur-md flex items-center justify-center"
+      aria-label="Close menu"
+      onClick={closeMenu}
+      style={{ width: 40, height: 40 }}
+    >
+      <svg
+        width="20"
+        height="20"
+        viewBox="0 0 20 20"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M5 5L15 15"
+          stroke="white"
+          strokeWidth="2"
+          strokeLinecap="round"
+        />
+        <path
+          d="M15 5L5 15"
+          stroke="white"
+          strokeWidth="2"
+          strokeLinecap="round"
+        />
+      </svg>
+    </button>
+    <div className="flex flex-col items-start p-6 pt-20 gap-y-6 h-full w-full animate-slideInRight">
+      {NavData.map((dt) => {
+        const Icon = dt.icon;
+        return (
+          <Link
+            key={dt.title}
+            to={dt.link}
+            className={`w-full flex items-center justify-start gap-4 text-left text-[20px] font-[700] font-alegreya tracking-wide rounded-2xl py-3 px-4 bg-white/10 hover:bg-sec hover:text-white transition-all duration-300 shadow-md border-b-2 border-white/10 ${
+              activeNavItem === dt.title ? "bg-sec text-white" : "text-white"
+            }`}
+            onClick={() => {
+              handleNavItemClick(dt.title);
+              closeMenu();
+            }}
+          >
+            <span className="text-xl bg-white/20 rounded-full p-2 flex items-center justify-center">
+              <Icon />
+            </span>
+            <span>{dt.title}</span>
+          </Link>
+        );
+      })}
+      <div className="w-full flex justify-start mt-6">
+        <div className="scale-90">
+          <ConsulatationCallBtn isScrolledPast={true} />
+        </div>
+      </div>
     </div>
   </div>
 );
@@ -100,18 +152,21 @@ const Navbar = () => {
             isScrolledPast && ""
           }`}
         >
-          <img
-            src={isScrolledPast ? "/logo.png" : "/logo.png"}
-            alt=""
-            className="w-[70px]"
-          />
-          <div
-            className={`flex font-alegreya text-2xl font-semibold mt-2 ${
-              isScrolledPast ? "text-white" : "text-white"
-            }`}
-          >
-            FLU<span className="text-sec">X</span>TONX
-          </div>
+          <Link to="/" className="flex items-center gap-x-2">
+            <img
+              src={isScrolledPast ? "/logo.png" : "/logo.png"}
+              alt=""
+              className="w-[70px] hover:scale-110 transition-all duration-300 ease-in-out"
+            />
+
+            <div
+              className={`flex font-alegreya text-2xl font-semibold mt-2 ${
+                isScrolledPast ? "text-white" : "text-white"
+              }`}
+            >
+              FLU<span className="text-sec">X</span>TONX
+            </div>
+          </Link>
         </div>
         <div className="flex items-center gap-x-10 h-full max-max820:hidden  pr-5">
           <div className="flex gap-x-4 items-center">

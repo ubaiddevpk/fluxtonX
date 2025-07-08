@@ -4,79 +4,57 @@ import styled from "styled-components";
 const ContactInput = ({ Value, setValue, placeholder, type, Label }) => {
   return (
     <StyledWrapper>
-      <div className="form-control">
+      <div className="input-group">
         <input
           type={type}
-          placeholder={placeholder}
-          required="true"
           value={Value}
           onChange={(e) => setValue(e.target.value)}
+          required
         />
-        <label>
-          {Label.split("").map((dt, i) => {
-            const dur = `${i * 50}ms`;
-            return (
-              <span
-                className="font-alegreya"
-                style={{ transitionDelay: dur.toString() }}
-              >
-                {dt}
-              </span>
-            );
-          })}
-        </label>
+        <label>{Label}</label>
       </div>
     </StyledWrapper>
   );
 };
 
 const StyledWrapper = styled.div`
-  .form-control {
+  .input-group {
     position: relative;
-    margin: 20px 0 40px;
+    margin: 30px 0;
     width: 100%;
   }
 
-  .form-control input {
-    background-color: transparent;
-    border: 0;
-    border-bottom: 2px #000 solid;
-    display: block;
+  .input-group input {
+    background: none;
+    border: none;
+    border-bottom: 2px solid #999;
+    outline: none;
     width: 100%;
-    padding: 15px 10px;
-    font-size: 18px;
-    color: #000;
+    padding: 12px 0 8px 0;
+    font-size: 16px;
+    color: #333;
+    transition: border-color 0.3s;
   }
 
-  .form-control input:focus,
-  .form-control input:valid {
-    outline: 0;
-    border-bottom-color: #000;
+  .input-group input:focus {
+    border-bottom-color: #0077b6; /* your main theme color */
   }
 
-  .form-control label {
+  .input-group label {
     position: absolute;
-    top: 15px;
-    left: 10px;
+    top: 12px;
+    left: 0;
+    color: #999;
+    font-size: 16px;
     pointer-events: none;
+    transition: 0.3s ease all;
   }
 
-  .form-control label span {
-    display: inline-block;
-    font-size: 18px;
-    min-width: 5px;
-    color: #00000097;
-    transition: 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-  }
-
-  .form-control input:focus + label span,
-  .form-control input:valid + label span {
-    color: #000;
-    transform: translateY(-30px);
-  }
-  .form-control input:focus + label {
-    left: 0px !important;
-    transition: all 0.9s ease-in-out;
+  .input-group input:focus ~ label,
+  .input-group input:valid ~ label {
+    top: -16px;
+    font-size: 13px;
+    color: #0077b6; /* your main theme color */
   }
 `;
 

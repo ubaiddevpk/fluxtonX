@@ -55,19 +55,22 @@ export default function AboutTabs() {
         </Box>
         <TabPanel value="1">
           <div className="font-alegreya max1100:text-[1rem]">
-            Capitalize on low hanging fruit to identify a ballpark value added
-            activity to beta test.
+            <strong>Our Mission:</strong> Empower businesses by delivering
+            innovative and reliable software solutions that drive growth and
+            efficiency.
           </div>
           <div className="font-alegreya mb-4 flex flex-col gap-y-2 py-2">
             <div className="flex items-center gap-x-2">
               <TiArrowForward className="text-sec text-2xl" />
               <div className=" max1100:text-[1rem]">
-                Document the short and long term goals.
+                Focus on customer-centric development.
               </div>
             </div>
             <div className="flex items-center gap-x-2">
               <TiArrowForward className="text-sec text-2xl" />
-              <div className=" max1100:text-[1rem]">Your product vision</div>
+              <div className=" max1100:text-[1rem]">
+                Deliver high-quality solutions timely.
+              </div>
             </div>
           </div>
           <MainBtn
@@ -77,19 +80,21 @@ export default function AboutTabs() {
             }}
           />
         </TabPanel>
+
         <TabPanel value="2">
           <div className="font-alegreya max1100:text-[1rem]">
-            Capitalize on low hanging fruit to identify a ballpark value added
-            activity to beta test.
+            <strong>Our Vision:</strong> To be a global leader in technology
+            services, recognized for our innovation, expertise, and commitment
+            to client success.
           </div>
           <div className="font-alegreya mb-4 flex flex-col gap-y-2 py-2">
             <div className="flex items-center gap-x-2">
               <TiArrowForward className="text-sec text-2xl" />
-              <div className="">Document the short and long term goals.</div>
+              <div className="">Inspire continuous growth and learning.</div>
             </div>
             <div className="flex items-center gap-x-2">
               <TiArrowForward className="text-sec text-2xl" />
-              <div className="">Your product vision</div>
+              <div className="">Lead the market with innovative solutions.</div>
             </div>
           </div>
           <MainBtn
@@ -99,19 +104,21 @@ export default function AboutTabs() {
             }}
           />
         </TabPanel>
+
         <TabPanel value="3">
           <div className="font-alegreya max1100:text-[1rem]">
-            Capitalize on low hanging fruit to identify a ballpark value added
-            activity to beta test.
+            <strong>Our Values:</strong> Integrity, innovation, teamwork, and
+            dedication form the core principles that guide our work and
+            relationships.
           </div>
           <div className="font-alegreya mb-4 flex flex-col gap-y-2 py-2">
             <div className="flex items-center gap-x-2">
               <TiArrowForward className="text-sec text-2xl" />
-              <div className="">Document the short and long term goals.</div>
+              <div className="">Uphold honesty and transparency.</div>
             </div>
             <div className="flex items-center gap-x-2">
               <TiArrowForward className="text-sec text-2xl" />
-              <div className="">Your product vision</div>
+              <div className="">Embrace creativity and collaboration.</div>
             </div>
           </div>
           <MainBtn

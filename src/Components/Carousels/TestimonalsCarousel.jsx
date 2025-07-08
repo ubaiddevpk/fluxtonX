@@ -6,6 +6,7 @@ import "./style.css";
 import { CarouselWrapper } from "./CarouselWrapper";
 import styled from "styled-components";
 import TestimonalC from "../Cards/TestimonalC";
+import testimonialsData from "../../utils/TestimonialsData";
 
 const StyledTitleText = styled.div.attrs({
   className: "font-[600] text-[3em] text-[#465462] font-montserrat text-center",
@@ -80,8 +81,8 @@ const TestimonalsCarousel = () => {
               },
             ]}
           >
-            {[1, 2, 3, 4, 5].map((dt, i) => (
-              <TestimonalC data={dt} />
+            {testimonialsData.map((dt, i) => (
+              <TestimonalC key={i} data={dt} />
             ))}
           </Slider>
         </div>

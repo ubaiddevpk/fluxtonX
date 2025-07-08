@@ -2,6 +2,7 @@ import React from "react";
 import BannerCard from "../../Components/Cards/BannerCard";
 import ProjectCard from "../../Components/Cards/ProjectCard";
 import HeaderTitle from "../../Components/Headers/HeaderTitle";
+import ProjectData from "../../utils/projectdata"; // ensure correct import
 
 const Portfolio = () => {
   return (
@@ -24,8 +25,8 @@ const Portfolio = () => {
       </div>
 
       <div className="flex px-2 flex-wrap items-center justify-center gap-x-4 gap-y-4 py-8">
-        {[1, 2, 3, 3, 4, 5, 6, 7].map((dt) => (
-          <ProjectCard />
+        {ProjectData.map((dt, index) => (
+          <ProjectCard key={dt.id} data={dt} custom={index} />
         ))}
       </div>
     </div>

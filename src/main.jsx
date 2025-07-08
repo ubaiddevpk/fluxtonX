@@ -8,6 +8,7 @@ import AboutUs from "./Pages/AboutUs/AboutUs";
 import Portfolio from "./Pages/Portfolio/Portfolio";
 import Layout from "./Layout";
 import Home from "./Pages/Home/Home";
+import ServiceDetailPage from "./Pages/Services/ServiceDetail"; // Adjust the import path as necessary
 
 const router = createBrowserRouter([
   {
@@ -27,6 +28,10 @@ const router = createBrowserRouter([
         element: <Services />,
       },
       {
+        path: "services/:slug", // ✅ dynamic route for service details
+        element: <ServiceDetailPage />,
+      },
+      {
         path: "about-us",
         element: <AboutUs />,
       },
@@ -37,7 +42,6 @@ const router = createBrowserRouter([
     ],
   },
 ]);
-
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <RouterProvider router={router} />

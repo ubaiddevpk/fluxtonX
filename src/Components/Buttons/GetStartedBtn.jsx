@@ -1,10 +1,14 @@
-import React from "react";
+
 import styled from "styled-components";
+import { Link } from "react-router-dom"; // Ensure you have react-router-dom installed
+
 
 const GetStartedBtn = () => {
   return (
     <StyledWrapper>
+      <Link to="/#contact-us" className="no-underline">
       <button className="btn font-alegreya">Get Started</button>
+      </Link>
     </StyledWrapper>
   );
 };
