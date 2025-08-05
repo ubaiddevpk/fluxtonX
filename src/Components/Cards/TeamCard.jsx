@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import  { useState } from "react";
 import { motion } from "framer-motion";
 
 const TeamCard = ({ data }) => {
@@ -20,6 +20,7 @@ const TeamCard = ({ data }) => {
           src={data.img}
           className="w-full h-full object-cover rounded-2xl"
           alt={data.name}
+          loading="lazy"
           initial={{ scale: 1 }}
           animate={{ scale: isHovered ? 1.1 : 1 }}
           transition={{ duration: 0.5, ease: "easeInOut" }}

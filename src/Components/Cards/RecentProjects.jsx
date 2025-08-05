@@ -1,6 +1,4 @@
-import React from "react";
 import HeaderTitle from "../Headers/HeaderTitle";
-import ProjectCard from "./ProjectCard";
 import ProjectsCarousel from "../Carousels/ProjectsCarousel";
 
 const RecentProjects = () => {

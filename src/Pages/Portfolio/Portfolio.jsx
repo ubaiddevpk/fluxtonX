@@ -2,9 +2,26 @@ import React from "react";
 import BannerCard from "../../Components/Cards/BannerCard";
 import ProjectCard from "../../Components/Cards/ProjectCard";
 import HeaderTitle from "../../Components/Headers/HeaderTitle";
-import ProjectData from "../../utils/projectdata"; // ensure correct import
+import { getprojects } from "../../api/projectsapi";
+// import ProjectData from "../../utils/projectdata";
+import { useEffect,useState } from "react"; // ensure correct import
 
 const Portfolio = () => {
+  const [projectdata, setprojectData] = useState([]);
+  
+    useEffect(() => {
+      const fetchData = async () => {
+        try {
+          const data = await getprojects();
+          console.log(data)
+          setprojectData(data);
+        } catch (error) {
+          console.error("Error fetching services:", error);
+        }
+      };
+  
+      fetchData();
+    }, []);
   return (
     <div>
       <BannerCard title={"Portfolio"} imgUrl={"/projectteam.jpg"} />
@@ -25,8 +42,8 @@ const Portfolio = () => {
       </div>
 
       <div className="flex px-2 flex-wrap items-center justify-center gap-x-4 gap-y-4 py-8">
-        {ProjectData.map((dt, index) => (
-          <ProjectCard key={dt.id} data={dt} custom={index} />
+        {projectdata.map((dt, index) => (
+          <ProjectCard key={dt._id} data={dt} custom={index} />
         ))}
       </div>
     </div>

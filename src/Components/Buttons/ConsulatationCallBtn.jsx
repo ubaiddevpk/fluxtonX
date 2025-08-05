@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { useLocation } from "react-router-dom";
 import { Link } from "react-router-dom"; // Ensure you have react-router-dom installed
 
-const ConsulatationCallBtn = ({ isScrolledPast }) => {
+const ConsulatationCallBtn = (isScrolledPast ) => {
   const location = useLocation();
 
   // If we're on the home page, don't render the button

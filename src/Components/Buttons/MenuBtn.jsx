@@ -1,14 +1,13 @@
-import React from "react";
-import styled from "styled-components";
 
-const MenuBtn = ({ setOpenSideMenu, OpenSideMenu }) => {
+import styled from "styled-components";
+const MenuBtn = ( {setOpenSideMenu, OpenSideMenu }) => {
   return (
     <StyledWrapper>
       <label className="hamburger">
         <input
           type="checkbox"
           checked={OpenSideMenu}
-          onClick={(e) => setOpenSideMenu(e.target.checked)}
+           onChange={(e) => setOpenSideMenu(e.target.checked)}
         />
         <svg viewBox="0 0 32 32">
           <path

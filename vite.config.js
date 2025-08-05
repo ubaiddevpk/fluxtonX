@@ -1,11 +1,11 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 
-// https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
+  base: './', // 👈 Add this line for relative paths
   server: {
-    host: 'localhost', // 👈 Your local host
-    port: 5173,              // 👈 You can change this if needed
+    host: 'localhost',
+    port: 5173,
   },
 })

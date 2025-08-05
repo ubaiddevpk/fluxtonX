@@ -6,7 +6,8 @@ import "./style.css";
 import { CarouselWrapper } from "./CarouselWrapper";
 import styled from "styled-components";
 import TestimonalC from "../Cards/TestimonalC";
-import testimonialsData from "../../utils/TestimonialsData";
+
+import { getTestimonials } from "../../api/testimonalsapi"; // ✅ import your API function
 
 const StyledTitleText = styled.div.attrs({
   className: "font-[600] text-[3em] text-[#465462] font-montserrat text-center",
@@ -28,6 +29,7 @@ const StyledTitleText = styled.div.attrs({
 
 const TestimonalsCarousel = () => {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+  const [testimonialData, setTestimonial] = useState([]);
   const handleResize = () => {
     setWindowWidth(window.innerWidth);
   };
@@ -37,6 +39,19 @@ const TestimonalsCarousel = () => {
       window.removeEventListener("resize", handleResize);
     };
   }, []);
+
+  useEffect(() => {
+      const fetchTeam = async () => {
+        try {
+          const data = await getTestimonials(); // ✅ fetch data from backend
+          setTestimonial(data);
+        } catch (err) {
+          console.error("Error fetching team data:", err);
+        }
+      };
+      fetchTeam();
+    }, []);
+  
 
   return false ? (
     <div className="w-full h-screen flex justify-center items-center">
@@ -81,7 +96,7 @@ const TestimonalsCarousel = () => {
               },
             ]}
           >
-            {testimonialsData.map((dt, i) => (
+            {testimonialData.map((dt, i) => (
               <TestimonalC key={i} data={dt} />
             ))}
           </Slider>

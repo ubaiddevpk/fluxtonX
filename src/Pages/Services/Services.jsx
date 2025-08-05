@@ -1,10 +1,26 @@
-import React from "react";
+import  { useEffect, useState } from "react";
 import BannerCard from "../../Components/Cards/BannerCard";
 import HeaderTitle from "../../Components/Headers/HeaderTitle";
 import ServiceCardNew from "../../Components/Cards/ServiceCardNew";
-import ServicesData from "../../utils/ServicesData";
+import { getServices } from "../../api/serviceApi"; // ✅ import your API function
 
 const Services = () => {
+  const [servicesData, setServicesData] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const data = await getServices();
+// ✅ check in console
+        setServicesData(data);
+      } catch (error) {
+        console.error("Error fetching services:", error);
+      }
+    };
+
+    fetchData();
+  }, []);
+
   return (
     <div>
       <BannerCard title={"Services"} imgUrl={"/projectteam.jpg"} />
@@ -23,10 +39,15 @@ const Services = () => {
           !
         </div>
       </div>
+
       <div className="flex px-2 flex-wrap items-center justify-center gap-x-4 gap-y-4 py-8">
-        {ServicesData.map((sd) => (
-          <ServiceCardNew key={sd.id} data={sd} />
-        ))}
+        {servicesData.length > 0 ? (
+          servicesData.map((sd) => (
+            <ServiceCardNew key={sd._id} data={sd} />
+          ))
+        ) : (
+          <div>Loading services...</div>
+        )}
       </div>
     </div>
   );

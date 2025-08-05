@@ -1,5 +1,5 @@
-import React, { useEffect } from "react";
-import { FaFacebookSquare, FaLinkedin } from "react-icons/fa";
+import React, { useEffect, useState } from "react";
+import { getcontactinfo } from "../../api/contactapi";
 import { FaLocationDot, FaRegMessage, FaPhoneVolume } from "react-icons/fa6";
 import { motion } from "framer-motion";
 import AOS from "aos";
@@ -7,8 +7,21 @@ import "aos/dist/aos.css";
 import SocialBtns from "../Cards/SocialBtns";
 
 const Footer = () => {
+  const [contactInfo, setContactInfo] = useState({});
+
   useEffect(() => {
     AOS.init({ duration: 1000 });
+
+    const fetchContactInfo = async () => {
+      try {
+        const res = await getcontactinfo();
+        setContactInfo(res);
+      } catch (error) {
+        console.error("Error fetching contact info:", error);
+      }
+    };
+
+    fetchContactInfo();
   }, []);
 
   return (
@@ -31,45 +44,29 @@ const Footer = () => {
           <motion.div
             className="flex flex-col items-start max-w-sm"
             data-aos="fade-right"
-            initial={{ x: -40, opacity: 0 }}
-            whileInView={{ x: 0, opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7, type: 'spring' }}
           >
             <a href="/" className="flex items-center gap-x-2 mb-3">
               <motion.img
                 src="./logo.png"
                 alt="Logo"
                 className="h-14 drop-shadow-xl rounded-xl border-2 border-white/30 bg-white/10 p-1"
-                initial={{ scale: 0.9, opacity: 0.7 }}
-                whileHover={{ scale: 1.05, opacity: 1 }}
-                transition={{ type: 'spring', stiffness: 200, damping: 18 }}
               />
               <div className="font-alegreya text-3xl font-semibold tracking-wide">
                 FLU<span className="text-sec">X</span>TONX
               </div>
             </a>
-            <motion.p
-              className="mt-2 font-alegreya text-left text-[1rem] leading-relaxed text-white/90 drop-shadow"
-              initial={{ y: 20, opacity: 0 }}
-              whileInView={{ y: 0, opacity: 1 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.2, duration: 0.7, type: 'spring' }}
-            >
-              At Fluxtonx, we provide cutting-edge geospatial services, driven by a commitment to excellence and delivering meaningful, impactful results.
+            <motion.p className="mt-2 font-alegreya text-left text-[1rem] leading-relaxed text-white/90 drop-shadow">
+              At Fluxtonx, we provide cutting-edge geospatial services, driven
+              by a commitment to excellence and delivering meaningful, impactful
+              results.
             </motion.p>
           </motion.div>
 
           {/* Quick Links */}
-          <motion.div
-            className="w-60"
-            data-aos="zoom-in"
-            initial={{ y: 30, opacity: 0 }}
-            whileInView={{ y: 0, opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7, type: 'spring' }}
-          >
-            <h3 className="text-2xl font-bold mb-4 font-alegreya">Quick Links</h3>
+          <motion.div className="w-60" data-aos="zoom-in">
+            <h3 className="text-2xl font-bold mb-4 font-alegreya">
+              Quick Links
+            </h3>
             <ul className="space-y-3">
               {[
                 { name: "Home", link: "/" },
@@ -77,12 +74,7 @@ const Footer = () => {
                 { name: "About Us", link: "/aboutUs" },
                 { name: "Portfolio", link: "/portfolio" },
               ].map((item, i) => (
-                <motion.li
-                  key={i}
-                  whileHover={{ scale: 1.08, x: 8 }}
-                  whileTap={{ scale: 0.97 }}
-                  transition={{ type: 'spring', stiffness: 300 }}
-                >
+                <motion.li key={i} whileHover={{ scale: 1.08, x: 8 }}>
                   <a
                     href={item.link}
                     className="hover:text-sec transition-colors duration-300 font-alegreya text-lg"
@@ -95,42 +87,56 @@ const Footer = () => {
           </motion.div>
 
           {/* Reach Us */}
-          <motion.div
-            className="w-72"
-            data-aos="fade-left"
-            initial={{ x: 40, opacity: 0 }}
-            whileInView={{ x: 0, opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7, type: 'spring' }}
-          >
+          {/* Reach Us */}
+          <motion.div className="w-72" data-aos="fade-left">
             <h3 className="text-2xl font-bold mb-4 font-alegreya">Reach Us</h3>
             <ul className="space-y-4">
-              <motion.li className="flex items-center gap-3" whileHover={{ scale: 1.05, x: 6 }}>
+              <motion.li
+                className="flex items-center gap-3"
+                whileHover={{ scale: 1.05, x: 6 }}
+              >
                 <FaPhoneVolume size={22} className="text-sec" />
-                <a
-                  href="https://wa.me/+923451184105"
-                  className="hover:text-sec transition-colors duration-300 font-alegreya text-base"
-                >
-                  +92 345 1184105
-                </a>
+                {contactInfo?.phone ? (
+                  <a
+                    href={`tel:${contactInfo.phone}`}
+                    className="hover:text-sec transition-colors duration-300 font-alegreya text-base"
+                  >
+                    {contactInfo.phone}
+                  </a>
+                ) : (
+                  <span className="font-alegreya text-base">
+                    Phone not available
+                  </span>
+                )}
               </motion.li>
-              <motion.li className="flex items-center gap-3" whileHover={{ scale: 1.05, x: 6 }}>
+
+              <motion.li
+                className="flex items-center gap-3"
+                whileHover={{ scale: 1.05, x: 6 }}
+              >
                 <FaRegMessage size={22} className="text-sec" />
-                <a
-                  href="mailto:info@fluxtonx.com"
-                  className="hover:text-sec transition-colors duration-300 font-alegreya text-base"
-                >
-                  info@fluxtonx.com
-                </a>
+                {contactInfo?.email ? (
+                  <a
+                    href={`mailto:${contactInfo.email.trim()}`}
+                    className="hover:text-sec transition-colors duration-300 font-alegreya text-base"
+                  >
+                    {contactInfo.email}
+                  </a>
+                ) : (
+                  <span className="font-alegreya text-base">
+                    Email not available
+                  </span>
+                )}
               </motion.li>
-              <motion.li className="flex items-start gap-3" whileHover={{ scale: 1.05, x: 6 }}>
+
+              <motion.li
+                className="flex items-start gap-3"
+                whileHover={{ scale: 1.05, x: 6 }}
+              >
                 <FaLocationDot size={22} className="text-sec mt-1" />
-                <a
-                  href="https://maps.app.goo.gl/PxFgwKY9x4j5tRAR8"
-                  className="hover:text-sec transition-colors duration-300 font-alegreya text-base max-w-xs leading-snug"
-                >
-                  FluxtonX, 1st Floor, KP IT Park, Board Bazar, Peshawar.
-                </a>
+                <span className="font-alegreya text-base max-w-xs leading-snug">
+                  {contactInfo?.address || "Address not available"}
+                </span>
               </motion.li>
             </ul>
           </motion.div>
@@ -139,13 +145,11 @@ const Footer = () => {
         {/* Bottom Bar */}
         <motion.div
           className="mt-12 border-t border-gray-600 pt-4 flex flex-col md:flex-row justify-between items-center gap-y-4"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8, type: 'spring' }}
+          data-aos="fade-up"
         >
           <p className="font-alegreya text-sm">
-            © {new Date().getFullYear()} FluxtonX Solutions. All Rights Reserved.
+            © {new Date().getFullYear()} FluxtonX Solutions. All Rights
+            Reserved.
           </p>
           <SocialBtns />
         </motion.div>

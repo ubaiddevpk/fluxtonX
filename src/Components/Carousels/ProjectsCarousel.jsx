@@ -6,10 +6,11 @@ import "./style.css";
 import { CarouselWrapper } from "./CarouselWrapper";
 // import TestimonalC from "../Cards/TestimonalC";
 import ProjectCard from "../Cards/ProjectCard";
-import ProjectData from "../../utils/projectdata";
+// import ProjectData from "../../utils/projectdata";
 import MainBtn from "../Buttons/MainBtn";
 // import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom"; // Ensure you have react-router-dom installed
+import { getprojects } from "../../api/projectsapi"; // Adjust the import path as necessary
 
 const ProjectsCarousel = () => {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
@@ -22,6 +23,21 @@ const ProjectsCarousel = () => {
       window.removeEventListener("resize", handleResize);
     };
   }, []);
+
+   const [projectdata, setprojectData] = useState([]);
+    
+      useEffect(() => {
+        const fetchData = async () => {
+          try {
+            const data = await getprojects();
+            setprojectData(data);
+          } catch (error) {
+            console.error("Error fetching services:", error);
+          }
+        };
+    
+        fetchData();
+      }, []);
 
   return (
     <CarouselWrapper className="gap-y-10 flex flex-col justify-between items-center w-full h-[600px]">
@@ -61,8 +77,8 @@ const ProjectsCarousel = () => {
             },
           ]}
         >
-          {ProjectData.map((dt, i) => (
-            <ProjectCard key={i} data={dt} />
+          {projectdata.map((dt) => (
+            <ProjectCard key={dt._id} data={dt} />
           ))}
         </Slider>
 

@@ -3,6 +3,7 @@ import { Outlet } from "react-router-dom";
 import MainLoader from "./Components/Loaders/MainLoader";
 import Navbar from "./Components/Navbar/Navbar";
 import Footer from "./Components/Footer/Footer";
+import ScheduleCallButton from "./Components/Cards/ScheduleConsultation";
 const Layout = () => {
   const [loading, setLoading] = useState(true);
   let isMount = false;
@@ -25,6 +26,7 @@ const Layout = () => {
       <Navbar />
       <Outlet />
       <Footer />
+      <ScheduleCallButton />
     </div>
   );
 };

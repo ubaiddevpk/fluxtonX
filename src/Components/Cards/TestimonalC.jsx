@@ -1,4 +1,4 @@
-import React from "react";
+
 import PropTypes from "prop-types";
 import { FaStar } from "react-icons/fa";
 import { PiQuotesBold } from "react-icons/pi";

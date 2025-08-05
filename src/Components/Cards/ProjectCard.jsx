@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { FaLongArrowAltRight } from "react-icons/fa";
 import { motion } from "framer-motion";
 
@@ -21,6 +21,7 @@ const ProjectCard = ({ data, custom }) => {
     >
       <img
         src={data.img}
+        loading="lazy"
         className="h-full w-[300px] absolute left-0 top-0 object-cover -z-10"
         alt={data.title}
       />
@@ -34,14 +35,20 @@ const ProjectCard = ({ data, custom }) => {
       ></div>
 
       {/* Arrow button */}
-      <div
-        className={`h-[40px] w-[40px] rounded-full border-2 border-white absolute right-5 ${
-          IsHovered ? "top-5" : "-top-full"
-        } z-[11] transition-all duration-1000 ease-in-out text-white flex items-center justify-center hover:text-sec hover:border-sec text-xl cursor-pointer`}
+      <a
+        href={data.github || data.live}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="bg-gray-800 p-2 rounded-full hover:bg-sec"
       >
-        <FaLongArrowAltRight />
-      </div>
-
+        <div
+          className={`h-[40px] w-[40px] rounded-full border-2 border-white absolute right-5 ${
+            IsHovered ? "top-5" : "-top-full"
+          } z-[11] transition-all duration-1000 ease-in-out text-white flex items-center justify-center hover:text-sec hover:border-sec text-xl cursor-pointer`}
+        >
+          <FaLongArrowAltRight />
+        </div>
+      </a>
       {/* Text content */}
       <div
         className={`flex flex-col z-10 items-center py-5 transition-all duration-500 ease-in-out ${

@@ -30,5 +30,8 @@ export default {
       max300: "300px",
     },
   },
-  plugins: [require("@tailwindcss/line-clamp")],
+plugins: [
+  require('@tailwindcss/aspect-ratio'),
+  require('@tailwindcss/aspect-ratio')
+],
 };

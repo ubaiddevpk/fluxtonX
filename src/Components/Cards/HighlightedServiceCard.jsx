@@ -9,6 +9,7 @@ const HighlightedServiceCard = ({ data }) => {
   }, []);
 
   const [isHovered, setIsHovered] = useState(false);
+  const Icon = data.icon; // ✅ destructure icon component
 
   return (
     <div
@@ -34,14 +35,20 @@ const HighlightedServiceCard = ({ data }) => {
           isHovered ? "expand-overlay" : "shrink-overlay"
         }`}
       ></div>
+
       <div className="infotop flex flex-col justify-center items-center z-30 opacity-1">
         <div
           className={`text-4xl transition-all duration-500 ${
             isHovered ? "text-main bg-sec" : " text-sec bg-main"
           } h-[80px] w-[80px] p-3 rounded-full flex justify-center items-center z-30`}
         >
-          <data.icon className={`text-4xl ${isHovered && "text-main"}`} />
+          {Icon ? (
+            <Icon className={`text-4xl ${isHovered && "text-main"}`} />
+          ) : (
+            <span>No Icon</span>
+          )}
         </div>
+
         <div
           className={`mt-4 text-[1rem] font-semibold transition-all duration-500 ${
             isHovered ? "text-sec" : "text-[#0550ba]"
@@ -52,6 +59,7 @@ const HighlightedServiceCard = ({ data }) => {
         >
           {data.title}
         </div>
+
         <div
           className={`mt-2 text-[.9rem] text-center font-[400] transition-all duration-500 ${
             isHovered ? "text-white opacity-100" : "text-gray-600 opacity-70"

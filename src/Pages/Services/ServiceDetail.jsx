@@ -1,6 +1,5 @@
-import  { useEffect } from "react";
+import { useEffect } from "react";
 import { useParams } from "react-router-dom";
-import ServicesData from "../../utils/ServicesData";
 import BannerCard from "../../Components/Cards/BannerCard";
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -8,21 +7,34 @@ import MainBtn from "../../Components/Buttons/MainBtn";
 import { TiArrowForward } from "react-icons/ti";
 import { useNavigate } from "react-router-dom";
 
+import { getServices } from "../../api/serviceApi";
+import { useState } from "react";
+
 const ServiceDetail = () => {
+  const [servicesData, setServicesData] = useState([]);
   const { slug } = useParams();
+  const service = servicesData.find((s) => s.slug === slug);
   const navigate = useNavigate();
-
-  // Initialize AOS
   useEffect(() => {
-    AOS.init({ duration: 1000, once: true });
-  }, []);
+    const fetchData = async () => {
+      try {
+        const data = await getServices();
+        console.log("Fetched services:", data); // ✅ check in console
+        setServicesData(data);
+      } catch (error) {
+        console.error("Error fetching services:", error);
+      }
+    };
 
-  const service = ServicesData.find((s) => s.slug === slug);
+    fetchData();
+    AOS.init({ duration: 800, once: true });
+    AOS.refresh();
+  }, []);
 
   if (!service) {
     return (
-      <div className="flex justify-center items-center h-screen text-xl">
-        Service not found
+      <div className="min-h-screen flex items-center justify-center text-xl text-gray-500">
+        Loading service details...
       </div>
     );
   }
@@ -44,7 +56,7 @@ const ServiceDetail = () => {
               src={service.img}
               alt={service.title}
               className="w-full h-[320px] max-h-[420px] rounded-xl object-cover object-center transition-transform duration-500 hover:scale-105"
-              style={{objectPosition: 'center'}}
+              style={{ objectPosition: "center" }}
             />
           </div>
         </div>
@@ -61,10 +73,15 @@ const ServiceDetail = () => {
             {service.desc}
           </p>
           <p className="text-gray-600 text-base">
-            Our <span className="font-semibold text-main">{service.title}</span> services
-            are designed to ensure you achieve your goals efficiently. We bring
-            <span className="text-sec font-semibold"> innovative solutions</span>, modern frameworks, and a dedicated team to
-            make your ideas come to life.
+            Our <span className="font-semibold text-main">{service.title}</span>{" "}
+            services are designed to ensure you achieve your goals efficiently.
+            We bring
+            <span className="text-sec font-semibold">
+              {" "}
+              innovative solutions
+            </span>
+            , modern frameworks, and a dedicated team to make your ideas come to
+            life.
           </p>
           <div className="bg-gradient-to-r from-sec to-main text-white p-6 rounded-xl shadow-lg border border-white/30">
             <h2 className="text-2xl font-bold mb-4 border-b border-white pb-2">
@@ -116,4 +133,3 @@ const ServiceDetail = () => {
 
 export default ServiceDetail;
 //what is github copilot
-
